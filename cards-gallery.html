@@ -1,0 +1,766 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#14110d">
+<title>Triarchate — Set 1 Cards</title><style>
+:root{--bg:#14110d;--ink:#e8ddc8;--dim:#b3a888;--gold:#c8a45a;--rule:#3a3026;--card:#1b1610}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,serif;padding:0 0 4rem}
+header{text-align:center;padding:2rem 1rem 1rem;border-bottom:1px solid var(--rule);background:linear-gradient(#1d1812,#14110d)}
+header h1{color:var(--gold);font-variant:small-caps;letter-spacing:.18em;margin:.2rem;font-size:1.9rem}
+header .s{color:var(--dim);font-style:italic}
+nav{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.2rem;justify-content:center;padding:.5rem;background:#100d0aee;border-bottom:1px solid var(--rule);backdrop-filter:blur(4px)}
+nav a{color:var(--gold);text-decoration:none;font-family:system-ui,sans-serif;font-size:.8rem;padding:.3rem .6rem;border:1px solid var(--rule);border-radius:14px}
+.wrap{max-width:74rem;margin:0 auto;padding:0 1rem}
+h2{font-variant:small-caps;letter-spacing:.08em;margin:2.4rem 0 1rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--gold)}
+h2 small{font-family:system-ui,sans-serif;font-size:.8rem;letter-spacing:.04em;color:var(--dim);text-transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.card,.omen{background:linear-gradient(#1f1913,#15110c);border:1px solid var(--rule);border-radius:10px;padding:.55rem;position:relative;box-shadow:0 3px 14px #0007;border-top:3px solid var(--c,#c8a45a)}
+.card{display:flex;flex-direction:column}
+.f-order{--c:#c8a45a}.f-vigil{--c:#6fa6bd}.f-unbowed{--c:#c0542f}.f-drowned{--c:#5f8a73}.f-quiet{--c:#9079b0}.f-realm{--c:#9a917f}
+h2.f-order{color:#c8a45a}h2.f-vigil{color:#6fa6bd}h2.f-unbowed{color:#c0542f}h2.f-drowned{color:#5f8a73}h2.f-quiet{color:#9079b0}h2.f-realm{color:#9a917f}
+.hd{display:flex;justify-content:space-between;align-items:baseline;gap:.4rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+.hd .nm{font-weight:bold;color:#f0e6cf;font-size:.95rem;line-height:1.15}
+.hd .cz{flex:none;min-width:1.5em;height:1.5em;line-height:1.5em;text-align:center;background:#000a;border:1px solid var(--c);border-radius:50%;color:var(--c);font-family:system-ui,sans-serif;font-size:.78rem;font-weight:bold;padding:0 .35em}
+.art{position:relative;aspect-ratio:5/3;margin:.45rem 0;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:radial-gradient(120% 120% at 50% 20%, color-mix(in srgb,var(--c) 26%, #14110d), #0c0a08)}
+.art img{width:100%;height:100%;object-fit:cover;display:block}
+.art .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0000;font-family:system-ui,sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.art.noart .ph{color:var(--c);opacity:.45}
+.art.noart::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,#0000 0 9px,#ffffff06 9px 10px)}
+.tl{font-family:system-ui,sans-serif;font-size:.7rem;letter-spacing:.04em;color:var(--dim);text-transform:uppercase}
+.tl em{color:var(--c);font-style:normal}
+.kw{margin:.3rem 0}.kw span{display:inline-block;font-family:system-ui,sans-serif;font-size:.62rem;letter-spacing:.08em;background:#000a;border:1px solid var(--c);color:var(--c);border-radius:10px;padding:.05em .5em;margin:.1em .15em .1em 0}
+.tx{font-size:.82rem;color:var(--ink);margin:.3rem 0;flex:1}
+.sin{color:#d39a8c;font-size:.78rem;margin-top:.25rem}
+.flav{font-style:italic;color:var(--dim);font-size:.75rem;border-top:1px solid var(--rule);padding-top:.3rem;margin-top:.3rem}
+.pt{position:absolute;bottom:.4rem;right:.5rem;background:#000c;border:1px solid var(--c);border-radius:6px;color:#f0e6cf;font-family:system-ui,sans-serif;font-weight:bold;font-size:.85rem;padding:.05em .45em}
+.pt span{color:var(--dim);margin:0 .1em}
+.card.candidate{border:1px solid #c8a45a;box-shadow:0 0 18px #c8a45a33,0 3px 14px #0008}
+.card.doctrine{background:linear-gradient(#241c12,#15110c)}
+.r-mythic .hd .nm{color:#f3d68a}
+.omen{grid-column:span 2}
+.omen .fact{font-style:italic;color:#ecd9a8;margin:.4rem 0}
+.omen .rd{font-size:.8rem;border-left:3px solid var(--c);padding:.15rem .5rem;margin:.2rem 0;background:#0003}
+.omen .rd b{color:var(--c);font-family:system-ui,sans-serif;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-right:.4em}
+.omen .dread{font-size:.8rem;color:#d6a08f;border-left:3px solid #7a3b2e;padding:.15rem .5rem;margin:.25rem 0;background:#0003}
+.omen .dread b{font-family:system-ui,sans-serif;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-right:.4em}
+.deck{display:inline-block;vertical-align:top;width:100%;max-width:22rem;background:#1b1610;border:1px solid var(--rule);border-top:3px solid var(--c);border-radius:8px;padding:.8rem 1rem;margin:.5rem .5rem 0 0}
+.deck h3{color:var(--c);margin:.1rem 0}.deck .doc{font-size:.85rem;color:var(--dim);margin:.2rem 0}.deck .strat{font-size:.82rem;font-style:italic;color:var(--ink)}
+.deck ul{columns:2;font-size:.78rem;padding-left:1.1rem;margin:.4rem 0 0}.deck .n{color:var(--gold);font-family:system-ui,sans-serif}
+.note{font-family:system-ui,sans-serif;font-size:.78rem;color:#8c7338;text-align:center;margin-top:2.5rem}
+@media(max-width:520px){.omen{grid-column:span 1}.deck ul{columns:1}}
+</style></head><body>
+<header><div class="s">TRIARCHATE · Set 1</div><h1>Roads to Riches</h1><div class="s">85 cards · 19 Omens · 5 starter decks — art slots fill as the pipeline runs</div></header>
+<nav><a href="#order">Order</a><a href="#vigil">Vigil</a><a href="#unbowed">Unbowed</a><a href="#drowned">Drowned</a><a href="#quiet">Quiet</a><a href="#realm">Realm</a><a href="#omens">Omens</a><a href="#decks">Decks</a></nav>
+<div class="wrap">
+<h2 id="order" class="f-order">Order of the Triad <small>Control · Judgment · 15 cards</small></h2><div class="grid"><div class="card f-order r-common doctrine">
+  <div class="hd"><span class="nm">The Triune Verdict</span><span class="cz">Free (Doctrine — not in the 40, in play from T1, indestructible)</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__the-triune-verdict.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Doctrine</span></div>
+  <div class="tl">Doctrine · <em>common</em></div>
+  <div class="kw"><span>DOCTRINE</span> <span>PENANCE</span> <span>JUDGMENT</span> <span>VERDICT-LOCK</span> <span>OBEDIENCE</span></div>
+  <div class="tx">Order of the Triad — the patient hand. PENANCE+: your once-per-turn PENANCE removes 4 self-Sin instead of 3, and you may pay 2 Faith to take a SECOND PENANCE this turn on a different friendly soul (this is the ONLY Penance-boost that can stack; other &#x27;extra Penance&#x27; effects do not add a third). FORCED Sin is still shed free and never spends your Penance. JUDGMENT: the first time each turn an Omen resolves with Order as leader, bank 1 Conviction of Obedience. HARD CAP: you may bank at most 2 Conviction of Obedience per turn across ALL sources combined. If you ever hold 7 Conviction of Obedience, you win the game.</div>
+  <div class="flav">&quot;Mercy is a door the Triad opens slowly,&quot; Corvin wrote, &quot;so the condemned have time to confess.&quot;</div>
+</div><div class="card f-order r-mythic candidate">
+  <div class="hd"><span class="nm">Cael, the Heretic to Unmake</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__cael-the-heretic-to-unmake.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate</span></div>
+  <div class="tl">Candidate · <em>mythic</em></div>
+  <div class="kw"><span>CANDIDATE</span> <span>GUARD</span> <span>BRAND</span> <span>TESTIFY</span></div>
+  <div class="tx">CANDIDATE — max 1 per deck. STAIN-ON-STRIKE: damaging Cael gives the attacker Sin = damage dealt. GUARD. When Cael enters, BRAND a target enemy soul. While Cael is on your board, the FIRST time each turn a soul you BRANDED gains Sin from a source YOU DO NOT CONTROL (its own attack, an opponent&#x27;s effect, seepage it incurs), mint 1 Order Testimony (a Verdict push toward an Omen; respects the 4/Omen and 6/turn caps). This NEVER banks Conviction of Obedience.</div>
+  <div class="flav">The boy looked up, warm-eyed, unafraid. Corvin&#x27;s hand did not shake until he had finished the brand.</div><div class="pt">3<span>/</span>6</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">Penitent Conscript</span><span class="cz">1</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__penitent-conscript.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>PENANCE</span></div>
+  <div class="tx">When this is Detained or dies, you may shed 1 self-Sin from a friendly soul (free).</div>
+  <div class="flav">Given a tabard, a spear, and a debt of sin to be worked off in the front rank.</div><div class="pt">1<span>/</span>2</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">Confessor&#x27;s Apprentice</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__confessor-s-apprentice.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>BRAND</span></div>
+  <div class="tx">When this enters, BRAND target enemy soul.</div>
+  <div class="flav">She learned the litany before she learned to read, and the brand before the litany.</div><div class="pt">2<span>/</span>2</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">Hold the Verdict</span><span class="cz">CONCEAL: flat 2 Faith into a relic slot. REVEAL: Sin(1)</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__hold-the-verdict.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Whisper</span></div>
+  <div class="tl">Whisper · <em>common</em></div>
+  <div class="kw"><span>CONCEAL</span> <span>VEIL</span> <span>DETAIN</span> <span>VERDICT-LOCK</span></div>
+  <div class="tx">CONCEAL. REVEAL — when an enemy unit attacks: after combat, DETAIN it (it is exhausted from attacking). If you control a Verdict-source (a Rite or Relic) you may make it VERDICT-LOCKED held by that source instead.</div>
+  <div class="flav">The warrant was signed before the crime. They only had to wait for the man to commit it.</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">Road Inquisitor</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__road-inquisitor.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>DETAIN</span> <span>TESTIFY</span></div>
+  <div class="tx">When this attacks an exhausted enemy unit and survives, you may DETAIN that unit (mints Order Testimony on first Detain/turn, 3/turn cap).</div>
+  <div class="flav">He asked the same three questions at every checkpoint, and wrote down which answer made you flinch.</div><div class="pt">2<span>/</span>3</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">The Brand</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__the-brand.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>common</em></div>
+  <div class="kw"><span>BRAND</span></div>
+  <div class="tx">BRAND target soul, then deal 1 damage to it. (A branded soul takes +1 from all sources and gains Sin(1) whenever it deals damage.)</div>
+  <div class="flav">It is not the iron that marks them. It is the smell, after, that the crowd remembers.</div>
+</div><div class="card f-order r-uncommon">
+  <div class="hd"><span class="nm">Choir Sermon-Singer</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__choir-sermon-singer.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>TESTIFY</span> <span>PENANCE</span></div>
+  <div class="tx">When this enters, you may TESTIFY 1 toward an Omen for free (does not tap, respects the 4/Omen and 6/turn caps). PENANCE rider: once/turn when you take a Penance, if a friendly soul is at 0 Sin afterward, draw a card.</div>
+  <div class="flav">The Choir does not sing to the Triad. It sings to the crowd, so the crowd will kneel.</div><div class="pt">3<span>/</span>3</div>
+</div><div class="card f-order r-uncommon">
+  <div class="hd"><span class="nm">Sit in Judgment</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__sit-in-judgment.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  <div class="kw"><span>DETAIN</span> <span>BRAND</span> <span>VERDICT-LOCK</span></div>
+  <div class="tx">DETAIN target exhausted enemy unit, then BRAND it. If you already control a Detained or Verdict-locked enemy unit, instead make this one VERDICT-LOCKED (held by this Rite; the writ goes to a relic slot as the Verdict-source).</div>
+  <div class="flav">The verdict is read once. The sentence is read every morning after.</div>
+</div><div class="card f-order r-common">
+  <div class="hd"><span class="nm">Templar Warden</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__templar-warden.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>GUARD</span> <span>SUBJUGATE</span></div>
+  <div class="tx">GUARD. SUBJUGATE(2) — reduce incoming damage to this unit by up to 2 (does not reduce unblocked combat Might).</div>
+  <div class="flav">The wardens do not advance. The road comes to them.</div><div class="pt">2<span>/</span>4</div>
+</div><div class="card f-order r-uncommon">
+  <div class="hd"><span class="nm">Wayside Confessional</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__wayside-confessional.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>uncommon</em></div>
+  <div class="kw"><span>RELIC</span> <span>PENANCE</span> <span>BRAND</span></div>
+  <div class="tx">RELIC. At your upkeep, shed 1 Sin from one friendly soul (free). Once/turn, when you BRAND an enemy soul, you may shed 1 additional Sin from a friendly soul (free; counts toward Corvin&#x27;s 6-Sin shed ceiling if in play).</div>
+  <div class="flav">Kneel, speak, be marked. The booth keeps no secrets it has not already sold to the court.</div>
+</div><div class="card f-order r-uncommon">
+  <div class="hd"><span class="nm">Saint-Aspirant Mira</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__saint-aspirant-mira.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>SUBJUGATE</span> <span>VERDICT-LOCK</span> <span>PENANCE</span></div>
+  <div class="tx">SUBJUGATE(2) — reduce incoming damage to this unit by up to 2 (does not reduce unblocked combat Might). At your upkeep, if you control a VERDICT-LOCKED or DETAINED enemy unit, this gains +1 Resolve (permanent) and you may shed 1 self-Sin (free).</div>
+  <div class="flav">They keep her clean and well-fed. A saint must look like mercy when the court needs a face.</div><div class="pt">3<span>/</span>5</div>
+</div><div class="card f-order r-rare">
+  <div class="hd"><span class="nm">The Writ of Obedience</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__the-writ-of-obedience.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>rare</em></div>
+  <div class="kw"><span>RELIC</span> <span>VERDICT-LOCK</span> <span>JUDGMENT</span> <span>OBEDIENCE</span></div>
+  <div class="tx">RELIC. Acts as a Verdict-source: Verdict-locks you create may be held by this Relic. Whenever an Omen resolves with Order as leader while you control a VERDICT-LOCKED enemy unit, bank 1 Conviction of Obedience — but this STILL cannot take you above the JUDGMENT hard cap of 2 Conviction of Obedience banked this turn.</div>
+  <div class="flav">Forty pages of who owes what to the Triad. Corvin keeps it chained to his wrist.</div>
+</div><div class="card f-order r-uncommon">
+  <div class="hd"><span class="nm">Recant or Burn</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__recant-or-burn.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  <div class="kw"><span>CONTAGION</span> <span>BRAND</span></div>
+  <div class="tx">Destroy target enemy soul with 4+ Sin. If the target has fewer than 4 Sin, instead Contagion(1) onto it (within the per-round cap) and BRAND it.</div>
+  <div class="flav">He offered them the recantation first. He had it printed in advance, on the same press as the warrant.</div>
+</div><div class="card f-order r-rare">
+  <div class="hd"><span class="nm">Confessor Corvin, the Voice&#x27;s Hand</span><span class="cz">6</span></div>
+  <div class="art"><img loading="lazy" src="art/order-of-the-triad__confessor-corvin-the-voice-s-hand.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>GUARD</span> <span>DETAIN</span> <span>BRAND</span> <span>VERDICT-LOCK</span></div>
+  <div class="tx">GUARD. When Corvin enters, DETAIN target exhausted enemy unit and BRAND it. SIN-SHED CEILING: you may not shed more than 6 self-Sin per turn across all effects (FORCED Sin sheds free and is exempt from this ceiling). While Corvin is in play, whenever you DETAIN an enemy unit you may pay Sin(2) to make it VERDICT-LOCKED (held by Corvin); if Corvin leaves play those locks become ordinary Detains. This grants no extra Penance.</div>
+  <div class="flav">&quot;I am not cruel,&quot; he told the boy. &quot;I am only thorough. The Triad sees no difference.&quot;</div><div class="pt">4<span>/</span>6</div>
+</div></div><h2 id="vigil" class="f-vigil">The Vigil <small>Martyr engine · 14 cards</small></h2><div class="grid"><div class="card f-vigil r-common doctrine">
+  <div class="hd"><span class="nm">The Long Vigil</span><span class="cz">Free (Doctrine)</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__the-long-vigil.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Doctrine</span></div>
+  <div class="tl">Doctrine · <em>common</em></div>
+  <div class="kw"><span>DOCTRINE</span> <span>WITNESS</span></div>
+  <div class="tx">In play from turn 1. Indestructible; cannot be Detained, smashed, or removed. WITNESS: whenever a friendly SOUL dies, bank 1 Conviction of Agony (subject to the global cap of 2 Conviction banked per turn, max 1 per death). Once per turn, you may pay Sin(1) to Recur a Soul that died this turn from your graveyard to your hand. RAISE-THE-SAINT (Set 1 win-con): at the start of your turn, if you have 5 or more Conviction of Agony, you may declare the Saint risen and win the game.</div>
+  <div class="flav">Tobin counted the dead the way other men count coin. Each name a stone in the wall that would, one day, stand.</div>
+</div><div class="card f-vigil r-mythic candidate">
+  <div class="hd"><span class="nm">Cael, the Promised Saint</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__cael-the-promised-saint.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate</span></div>
+  <div class="tl">Candidate · <em>mythic</em></div>
+  <div class="kw"><span>GUARD</span> <span>CANDIDATE</span> <span>MARTYR</span></div>
+  <div class="tx">GUARD. CANDIDATE (damaging Cael gives the attacker Sin = damage dealt). While Cael is in play, the FIRST friendly Soul that dies each turn banks 1 Conviction of Agony even if you have no other witness (still subject to the global 2/turn cap; this does not exceed it). MARTYR — if Cael dies, do not bank Conviction; instead the next friendly Soul that dies this game banks 2 Conviction of Agony (counts toward, and is limited by, that turn&#x27;s global cap).</div>
+  <div class="flav">They had told Tobin the Saint would come armed. The boy carried nothing but the way the light bent toward him.</div><div class="pt">2<span>/</span>6</div>
+</div><div class="card f-vigil r-common">
+  <div class="hd"><span class="nm">Pilgrim-Watcher</span><span class="cz">1</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__pilgrim-watcher.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">MARTYR — draw a card. If this Soul was SACRIFICED to a Rite, exile it instead of placing it in your graveyard (its Martyr still fires).</div>
+  <div class="flav">He watched the road for the Saint until the road took him. He went gladly; watching was over.</div><div class="pt">1<span>/</span>2</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">Name-Seeker</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__name-seeker.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">MARTYR — bank 1 Conviction of Agony (within the global cap), then you may Recur the cheapest other Soul in your graveyard to your hand.</div>
+  <div class="flav">He wandered the roads asking the dying for the Saint&#x27;s true name. Most cursed him. A few wept and told him a name. None matched.</div><div class="pt">1<span>/</span>3</div>
+</div><div class="card f-vigil r-common">
+  <div class="hd"><span class="nm">Offer to the Breath</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__offer-to-the-breath.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>common</em></div>
+  
+  <div class="tx">Sacrifice a friendly Soul. (Its MARTYR triggers fire and you bank Conviction as normal, within the global cap. A Soul sacrificed this way is exiled, not placed in your graveyard, unless its own text says otherwise.) You may draw a card; you may not draw more than 1 card from Offer to the Breath effects this turn.</div>
+  <div class="flav">&quot;Give what the Breath would take anyway,&quot; Tobin said, &quot;and give it on your own terms.&quot;</div>
+</div><div class="card f-vigil r-common">
+  <div class="hd"><span class="nm">Penitent of the Watch</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__penitent-of-the-watch.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">MARTYR — bank 1 Conviction of Agony. (Subject to the global cap of 2 Conviction per turn; with The Long Vigil out, this and the Doctrine together still bank at most 1 for this death.)</div>
+  <div class="flav">&quot;I am not afraid of the Ashes,&quot; she said. &quot;I have been cold my whole life.&quot;</div><div class="pt">2<span>/</span>3</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">Martyr of the Threshold</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__martyr-of-the-threshold.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>GUARD</span> <span>MARTYR</span></div>
+  <div class="tx">GUARD. MARTYR — bank 1 Conviction of Agony (within the global cap) AND deal 2 damage to the unit that killed it (if any).</div>
+  <div class="flav">He stood in the doorway of the burning chapel so the others could run. The Order called it obstruction. The Vigil called it the first miracle.</div><div class="pt">3<span>/</span>3</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">Relic-Mystic</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__relic-mystic.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">ETB: look at the top 3 cards of your deck; put a Soul or Relic into your hand, the rest on the bottom. MARTYR — gain 1 Faith next turn.</div>
+  <div class="flav">She read the bones of saints the way scribes read ledgers. The bones, she said, were more honest.</div><div class="pt">2<span>/</span>3</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">Reliquary of the Fallen</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__reliquary-of-the-fallen.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>uncommon</em></div>
+  <div class="kw"><span>RELIC</span></div>
+  <div class="tx">At your upkeep, if a friendly Soul died last turn, bank 1 Conviction of Agony (within the global cap of 2 per turn). Once per turn, you may pay Sin(1) to Recur a Soul from your graveyard OR your Subjugated Row to your hand; if recurred from the Subjugated Row, its Sin resets to 0.</div>
+  <div class="flav">The bones of the branded, gathered from the Ashes. The Order threw them away. The Vigil knelt.</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">The Wall of Names</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__the-wall-of-names.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  
+  <div class="tx">Recur up to two Souls from your graveyard to your hand. If you control The Long Vigil, bank 1 Conviction of Agony (within the global cap of 2 per turn).</div>
+  <div class="flav">Stone by stone, name by name. Tobin meant for it to outlast the Triad itself.</div>
+</div><div class="card f-vigil r-rare">
+  <div class="hd"><span class="nm">Agony Made Manifest</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__agony-made-manifest.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>rare</em></div>
+  
+  <div class="tx">Sin(2) — this Sin cannot be shed (by Penance or otherwise) until your next turn. Sacrifice any number of friendly Souls (their MARTYR triggers fire; each is exiled). Bank Conviction of Agony as their deaths allow, up to the global cap of 2 this turn. Then deal 1 damage to the enemy Soul for each Soul sacrificed, to a maximum of 3 damage.</div>
+  <div class="flav">Tobin spread his arms over the kneeling rows. &quot;Let it be seen,&quot; he said. &quot;Let the Triad watch what its silence makes.&quot;</div>
+</div><div class="card f-vigil r-rare">
+  <div class="hd"><span class="nm">Tobin, Keeper of the Names</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__tobin-keeper-of-the-names.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">While Tobin is in play, the first friendly Soul to die each turn banks 1 extra Conviction of Agony (this counts toward the global 2/turn cap; it does not exceed it). MARTYR — Recur a Soul from your graveyard to your hand.</div>
+  <div class="flav">A heretic monk by the Order&#x27;s reckoning; a true priest by his own. He wrote every dead name in a book no Confessor would ever read.</div><div class="pt">2<span>/</span>5</div>
+</div><div class="card f-vigil r-uncommon">
+  <div class="hd"><span class="nm">Choir of the Dying</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__choir-of-the-dying.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">Whenever another friendly Soul dies, this gets +1/+0 until end of turn. MARTYR — bank 1 Conviction of Agony (within the global cap of 2 per turn; banking from this and any other source still cannot exceed 2 for the turn).</div>
+  <div class="flav">They sang loudest as they fell, so the next rank would know the tune.</div><div class="pt">3<span>/</span>5</div>
+</div><div class="card f-vigil r-rare">
+  <div class="hd"><span class="nm">Saint-Aspirant</span><span class="cz">6</span></div>
+  <div class="art"><img loading="lazy" src="art/the-vigil__saint-aspirant.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>WARD</span> <span>MARTYR</span></div>
+  <div class="tx">WARD. MARTYR — bank 1 Conviction of Agony (within the global cap), then at your opponent&#x27;s end step return this card to play as a 4/3 with no keywords. The returned copy may not bank Conviction again; if it dies a second time it is exiled.</div>
+  <div class="flav">&quot;Almost,&quot; the old monks would whisper when she passed. &quot;Almost the one.&quot; She heard them, and tried to be worthy of the dying.</div><div class="pt">4<span>/</span>6</div>
+</div></div><h2 id="unbowed" class="f-unbowed">The Unbowed <small>Swarm · iconoclasm · 16 cards</small></h2><div class="grid"><div class="card f-unbowed r-common doctrine">
+  <div class="hd"><span class="nm">The Defiance Made Manifest</span><span class="cz">Free</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__the-defiance-made-manifest.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Doctrine</span></div>
+  <div class="tl">Doctrine · <em>common</em></div>
+  <div class="kw"><span>ABOLITION</span> <span>ICONOCLASM</span></div>
+  <div class="tx">FREE, in play from turn 1, indestructible, not part of your 40. WIN-CON — ABOLITION: when your DEFIANCE COUNTER reaches 3, you win at next priority (Breath-proof). You gain 1 Defiance per ENEMY RELIC you smash, or per enemy soul you CAST-DOWN. SELF-IDOL CAP: at most 1 Defiance per game may come from smashing your own IDOLs; the other two must be opponent-facing. Once per turn, when you gain your FIRST Defiance of the turn, you may make a 1/1 RIOTER token (summoning-sick). They cannot un-break what is already broken.</div>
+  <div class="flav">Garrick had counted the idols in the square. Three. He only needed to break three — and two of them were not his own.</div>
+</div><div class="card f-unbowed r-mythic candidate">
+  <div class="hd"><span class="nm">Cael, the Banner Unbroken</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__cael-the-banner-unbroken.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate</span></div>
+  <div class="tl">Candidate · <em>mythic</em></div>
+  <div class="kw"><span>CANDIDATE</span> <span>ZEAL</span> <span>MARTYR</span></div>
+  <div class="tx">CANDIDATE (max 1). STAIN-ON-STRIKE (damaging Cael gives the attacker Sin = damage). When Cael enters, put Sin(1) on Cael (he carries the first break). ZEAL. While Cael is on the board, your RIOTER tokens have +1 Might. Whenever an ENEMY relic or your own IDOL is smashed, put Sin(1) on Cael (he carries every break). Cael cannot be Detained while you control 4 or more other units. MARTYR — make a 1/1 RIOTER token for each Defiance Counter you have (max 3).<div class="sin">1</div></div>
+  <div class="flav">They did not follow the boy. They followed what they decided the boy meant.</div><div class="pt">2<span>/</span>5</div>
+</div><div class="card f-unbowed r-common">
+  <div class="hd"><span class="nm">Road Militia</span><span class="cz">1</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__road-militia.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  
+  <div class="tx">When Road Militia enters, make a 1/1 RIOTER token (summoning-sick).<div class="sin">0</div></div>
+  <div class="flav">Two pitchforks, one grievance.</div><div class="pt">1<span>/</span>1</div>
+</div><div class="card f-unbowed r-common">
+  <div class="hd"><span class="nm">Deserter Rabble</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__deserter-rabble.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  
+  <div class="tx">Deserter Rabble cannot block. When Deserter Rabble enters, make one 1/1 RIOTER token (summoning-sick).<div class="sin">0</div></div>
+  <div class="flav">They dropped the king&#x27;s banner in the mud and kept walking.</div><div class="pt">1<span>/</span>1</div>
+</div><div class="card f-unbowed r-common">
+  <div class="hd"><span class="nm">Peasant Levy</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__peasant-levy.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>GUARD</span> <span>MARTYR</span></div>
+  <div class="tx">GUARD. MARTYR — make a 1/1 RIOTER token (summoning-sick).<div class="sin">0</div></div>
+  <div class="flav">A wall of bodies is still a wall.</div><div class="pt">2<span>/</span>2</div>
+</div><div class="card f-unbowed r-uncommon">
+  <div class="hd"><span class="nm">Pull It Down</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__pull-it-down.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  <div class="kw"><span>ICONOCLASM</span></div>
+  <div class="tx">ICONOCLASM. SMASH target enemy RELIC, or your own IDOL. Then make a 1/1 RIOTER token (summoning-sick). Sin(1): instead SMASH up to two such relics. (Defiance per Iconoclasm rules; own-IDOL smashes obey the once-per-game self-Idol cap.)<div class="sin">0</div></div>
+  <div class="flav">Stone by stone, the cathedral becomes a road.</div>
+</div><div class="card f-unbowed r-common">
+  <div class="hd"><span class="nm">Throw the First Stone</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__throw-the-first-stone.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>common</em></div>
+  
+  <div class="tx">Deal 2 damage to target enemy soul. If you control 3 or more units, deal 3 instead.<div class="sin">0</div></div>
+  <div class="flav">The riot has a beginning, and it is small, and it is heavy.</div>
+</div><div class="card f-unbowed r-uncommon">
+  <div class="hd"><span class="nm">Arsonist of the Quarter</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__arsonist-of-the-quarter.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>ICONOCLASM</span></div>
+  <div class="tx">ICONOCLASM. When Arsonist of the Quarter enters, you may SMASH target enemy RELIC, or your own IDOL. Sin(1): SMASH a second such relic this turn. (Defiance is gained per Iconoclasm rules; your own IDOLs are subject to the once-per-game self-Idol Defiance cap.)<div class="sin">0</div></div>
+  <div class="flav">Fire asks no permission and keeps no relics.</div><div class="pt">3<span>/</span>2</div>
+</div><div class="card f-unbowed r-uncommon">
+  <div class="hd"><span class="nm">Brand-the-Iron</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__brand-the-iron.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  
+  <div class="tx">When Brand-the-Iron BLOCKS or is blocked by an enemy soul, put Sin(1) on that enemy soul (the mob marks its betters). If that soul is STAINED (3+ Sin) when it dies this combat, you CAST-DOWN it (gain 1 Defiance). RIOTER tokens you control may assign their Sin onto a soul Brand-the-Iron marked this combat.<div class="sin">0</div></div>
+  <div class="flav">They held him down and pressed the king&#x27;s own seal into his cheek.</div><div class="pt">3<span>/</span>3</div>
+</div><div class="card f-unbowed r-uncommon">
+  <div class="hd"><span class="nm">The Burning Idol</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__the-burning-idol.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>uncommon</em></div>
+  <div class="kw"><span>ICONOCLASM</span></div>
+  <div class="tx">IDOL. When The Burning Idol enters, make a 1/1 RIOTER token (summoning-sick). Once per turn, as your own action, you may SMASH this IDOL: make two 1/1 RIOTER tokens. You gain 1 Defiance from this ONLY if you have not yet taken your once-per-game self-Idol Defiance (otherwise no Defiance). If an enemy smashes it, you gain nothing.</div>
+  <div class="flav">They built it so they could have the joy of tearing it down.</div>
+</div><div class="card f-unbowed r-uncommon">
+  <div class="hd"><span class="nm">The Kneeling Refused</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__the-kneeling-refused.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  
+  <div class="tx">Your RIOTER tokens and ZEAL units get +1 Might until end of turn. Sin(1): they also gain WARD this combat.<div class="sin">0</div></div>
+  <div class="flav">Every back that would not bend was a sermon.</div>
+</div><div class="card f-unbowed r-common">
+  <div class="hd"><span class="nm">Turncoat Knight</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__turncoat-knight.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>ZEAL</span></div>
+  <div class="tx">ZEAL. Turncoat Knight enters with Sin(1). When Turncoat Knight deals combat damage to an enemy soul, put Sin(1) on Turncoat Knight (he learns to like it).<div class="sin">1</div></div>
+  <div class="flav">He turned his coat, then his blade, then the whole column.</div><div class="pt">2<span>/</span>3</div>
+</div><div class="card f-unbowed r-rare">
+  <div class="hd"><span class="nm">Garrick, Firebrand of the Roads</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__garrick-firebrand-of-the-roads.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>ZEAL</span></div>
+  <div class="tx">ZEAL. Garrick enters with Sin(1). When Garrick attacks alongside 2 or more other attackers, make a 1/1 RIOTER token (after blockers, before damage). When Garrick deals combat damage to an enemy soul, put Sin(1) on that soul (the riot marks who it touches). The first time each turn you CAST-DOWN an enemy soul, draw a card. Sin(1): give Garrick +2 Might until end of turn.<div class="sin">1</div></div>
+  <div class="flav">He spoke and the road stood up.</div><div class="pt">2<span>/</span>4</div>
+</div><div class="card f-unbowed r-rare">
+  <div class="hd"><span class="nm">The Standard of the Roads</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__the-standard-of-the-roads.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>rare</em></div>
+  
+  <div class="tx">At your upkeep, make a 1/1 RIOTER token. The first time each turn you SMASH an ENEMY relic OR CAST-DOWN an enemy soul, gain 1 additional Defiance (max 1 extra per turn; never from self-Idol smashes). Your RIOTER tokens have GUARD while you control 5 or more units.</div>
+  <div class="flav">It was a torn shirt on a broken spear. It was enough.</div>
+</div><div class="card f-unbowed r-rare">
+  <div class="hd"><span class="nm">Garrick&#x27;s Last Word</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__garrick-s-last-word.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>rare</em></div>
+  
+  <div class="tx">Sin(2) (un-sheddable this turn): each of your units gets +1 Might and ZEAL until end of turn, and they ignore enemy Guards this combat. When this resolves, if you control 5 or more attackers, gain 1 Defiance ONLY if at least one of them deals damage to an enemy soul or relic this combat (it must land on the enemy).<div class="sin">0</div></div>
+  <div class="flav">Break everything. Then we will see what holds.</div>
+</div><div class="card f-unbowed r-rare">
+  <div class="hd"><span class="nm">The Mob Entire</span><span class="cz">7</span></div>
+  <div class="art"><img loading="lazy" src="art/the-unbowed__the-mob-entire.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>MARTYR</span></div>
+  <div class="tx">When The Mob Entire enters, make a 1/1 RIOTER token (summoning-sick) for each other unit you control (max 3). The Mob Entire gets +1 Might for each RIOTER you control (max +3). MARTYR — each of your RIOTER tokens gains +0/+1 (Resolve) permanently.<div class="sin">0</div></div>
+  <div class="flav">No single throat. A thousand, and one breath.</div><div class="pt">2<span>/</span>5</div>
+</div></div><h2 id="drowned" class="f-drowned">The Drowned <small>Contagion · 14 cards</small></h2><div class="grid"><div class="card f-drowned r-common doctrine">
+  <div class="hd"><span class="nm">The Welcomed Tide</span><span class="cz">Free</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__the-welcomed-tide.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Doctrine</span></div>
+  <div class="tl">Doctrine · <em>common</em></div>
+  <div class="kw"><span>DOCTRINE</span> <span>RISING</span> <span>IMMUNITY TAX</span> <span>BREATH-PUSH CAP</span></div>
+  <div class="tx">Free, in play from turn 1, indestructible, not part of your 40. ECONOMY: once per round when the Breath Clock ticks up, mint 1 Drowned Testimony (Drowned cap 2/turn). BREATH-PUSH CAP: your controlled effects raise the Breath at most +1 per round in total, on top of its natural tick (overflow is not applied unless a card pays its stated extra cost). TAX (escalating): at your upkeep, while pursuing Drowning, pay self-Sin equal to (Breath - 7), minimum 1, onto a friendly soul that cannot Penance it this turn (or pay that many Faith) — if you do, your souls ignore this round&#x27;s Breath-driven seepage and you are immune to the Breath-12 cataclysm. CONTESTABLE: the opponent may, once per round, spend an action to declare &#x27;the water holds&#x27; — the natural Breath tick still happens but no controlled up-tick may be added that round. WIN HOOK (Drowning, WAVE 2 — NOT a live Set 1 win-con; banks toward the wave-2 finisher only): if you have paid the Tax this round and the Breath reaches 12, you out-survive the flood.</div>
+  <div class="flav">&quot;Open the door,&quot; Silas said. &quot;The water was never the enemy. The shore was.&quot;</div>
+</div><div class="card f-drowned r-rare candidate">
+  <div class="hd"><span class="nm">Silas, Voice in the Flood</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__silas-voice-in-the-flood.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate-adjacent Unit</span></div>
+  <div class="tl">Candidate-adjacent Unit · <em>rare</em></div>
+  <div class="kw"><span>RISING</span> <span>CONTAGION</span></div>
+  <div class="tx">When Silas enters, the Breath rises +1 (this is a controlled up-tick — it counts as your one push for the round under the Breath-Push Cap, and counts as a Breath up-tick for Testimony). Silas does NOT tick the Breath on your upkeeps. RISING 8: while Breath is 8+, when Silas attacks, CONTAGION(1) onto the blocking or defending soul (counts against your per-round Contagion cap). The first apostate preacher to call the drowning a baptism.</div>
+  <div class="flav">&quot;You are not sinking,&quot; he told the kneeling crowd. &quot;You are being received.&quot;</div><div class="pt">3<span>/</span>5</div>
+</div><div class="card f-drowned r-mythic candidate">
+  <div class="hd"><span class="nm">Cael, the Open Door</span><span class="cz">6</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__cael-the-open-door.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate</span></div>
+  <div class="tl">Candidate · <em>mythic</em></div>
+  <div class="kw"><span>CANDIDATE</span> <span>SUBJUGATE</span> <span>RISING</span> <span>CONTAGION</span></div>
+  <div class="tx">Max 1 per deck. STAIN-ON-STRIKE: damaging Cael gives the attacker Sin = damage dealt. SUBJUGATE(2). RISING 6: while Breath is 6+, at your upkeep CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap; if the cap is spent it is simply not placed). RISING 10: while Breath is 10+, Cael gains +1/+1 and at your upkeep, IF you have not pushed the Breath this round, you may push it +1 (this is your one controlled up-tick for the round, respecting the Breath-Push Cap — it never stacks an extra tick). Cael is still a lawful target for Detain. He does not push the door; he simply will not close it.</div>
+  <div class="flav">They thought the boy was a vessel to be filled. Silas understood: he was the hole the sea pours through.</div><div class="pt">3<span>/</span>6</div>
+</div><div class="card f-drowned r-common">
+  <div class="hd"><span class="nm">High Tide</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__high-tide.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>common</em></div>
+  <div class="kw"><span>CONTAGION</span></div>
+  <div class="tx">If your controlled effects have not yet pushed the Breath this round, the Breath rises +1 (this is your one controlled up-tick under the Breath-Push Cap; counts as an up-tick for Testimony). Then CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap). The simplest prayer of the Drowned: ask the water for one more inch.</div>
+  <div class="flav">&quot;Higher,&quot; Silas whispered, and the river obliged.</div>
+</div><div class="card f-drowned r-uncommon">
+  <div class="hd"><span class="nm">Sermon of the Rising</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__sermon-of-the-rising.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Whisper</span></div>
+  <div class="tl">Whisper · <em>uncommon</em></div>
+  <div class="kw"><span>CONCEAL</span> <span>RISING</span></div>
+  <div class="tx">CONCEAL (play face-down into a relic slot for 2 Faith). REVEAL (at any time you would gain Testimony from a Breath up-tick, if your controlled effects have not already pushed the Breath this round): push the Breath +1 (this is your one controlled up-tick for the round under the Breath-Push Cap), and CONTAGION(1) onto an enemy soul with 1+ Sin (counts against your per-round Contagion cap). An ambush that turns one tick into a flood.</div>
+  <div class="flav">No one preached it aloud. It was carried mouth to ear, downriver.</div>
+</div><div class="card f-drowned r-common">
+  <div class="hd"><span class="nm">Willing Subjugate</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__willing-subjugate.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>common</em></div>
+  <div class="kw"><span>SUBJUGATE</span> <span>RISING</span></div>
+  <div class="tx">SUBJUGATE(2). RISING 6: +1/+1 while Breath is 6+. A cheap, sticky wall that hardens as the world worsens.</div>
+  <div class="flav">She held out her wrists for the brand and thanked the iron.</div><div class="pt">1<span>/</span>4</div>
+</div><div class="card f-drowned r-uncommon">
+  <div class="hd"><span class="nm">Breath Spreader</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__breath-spreader.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>uncommon</em></div>
+  <div class="kw"><span>CONTAGION</span></div>
+  <div class="tx">ETB and on attack: CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap). If the cap is already spent, you may pay Sin(1) to this unit (UN-SHEDDABLE until your next turn) to place 1 anyway.</div>
+  <div class="flav">He breathed out, and the room breathed it in, and the room was never clean again.</div><div class="pt">2<span>/</span>3</div>
+</div><div class="card f-drowned r-uncommon">
+  <div class="hd"><span class="nm">Confession by Drowning</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__confession-by-drowning.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  <div class="kw"><span>CONTAGION</span> <span>BRAND</span></div>
+  <div class="tx">BRAND an enemy soul, then CONTAGION(1) onto it (counts against your per-round Contagion cap; if the cap is spent you may pay Sin(1) to a friendly soul — UN-SHEDDABLE until your next turn — to place it anyway). Branded, it takes +1 from all sources and gains Sin when it deals damage — so the seepage you started keeps feeding itself.</div>
+  <div class="flav">They held his head under until the truth came up. It always did, eventually.</div>
+</div><div class="card f-drowned r-common">
+  <div class="hd"><span class="nm">Welcomed Branded</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__welcomed-branded.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>common</em></div>
+  <div class="kw"><span>SUBJUGATE</span> <span>MARTYR</span></div>
+  <div class="tx">SUBJUGATE(2). MARTYR — CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap). Cast into the Ashes, and yet here — and still leaking sin into whoever struck him down.</div>
+  <div class="flav">&quot;We do not bury our branded,&quot; said Silas. &quot;We let them keep teaching.&quot;</div><div class="pt">2<span>/</span>4</div>
+</div><div class="card f-drowned r-uncommon">
+  <div class="hd"><span class="nm">Apostate Preacher</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__apostate-preacher.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>uncommon</em></div>
+  <div class="kw"><span>RISING</span> <span>CONTAGION</span></div>
+  <div class="tx">RISING 6: while Breath is 6+, the first time each turn an enemy soul becomes STAINED (reaches 3+ Sin) from a source you control, draw a card. Carries Contagion into card advantage as the tide turns.</div>
+  <div class="flav">&quot;Confess,&quot; he smiled, &quot;and keep confessing. The list is the point.&quot;</div><div class="pt">3<span>/</span>4</div>
+</div><div class="card f-drowned r-uncommon">
+  <div class="hd"><span class="nm">Drowned Choir</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__drowned-choir.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>uncommon</em></div>
+  <div class="kw"><span>RISING</span> <span>GUARD</span></div>
+  <div class="tx">GUARD. RISING 8: while Breath is 8+, at your upkeep each STAINED enemy soul loses an extra 1 (Soul damage / -Resolve) on top of seepage (this is not Contagion and does not place Sin; it caps at the standard +1 Breath-10 seepage bonus already in effect — they do not both apply, take the larger). A wall that turns the rising water into a drumbeat against the stained.</div>
+  <div class="flav">They did not sing words. They sang the level of the river, rising.</div><div class="pt">2<span>/</span>5</div>
+</div><div class="card f-drowned r-rare">
+  <div class="hd"><span class="nm">The Drowning Font</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__the-drowning-font.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>rare</em></div>
+  <div class="kw"><span>RELIC</span> <span>CONTAGION</span> <span>IMMUNITY TAX</span></div>
+  <div class="tx">RELIC. At your upkeep, after you pay the (escalating) Immunity Tax, CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap). The Font does NOT push the Breath and does NOT add extra cataclysm protection beyond the Tax you already paid. Smashable by Iconoclasm. The engine that makes the late game yours instead of everyone&#x27;s.</div>
+  <div class="flav">The font never emptied. That was the miracle, and the threat.</div>
+</div><div class="card f-drowned r-rare">
+  <div class="hd"><span class="nm">The Mad Prophet</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__the-mad-prophet.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit</span></div>
+  <div class="tl">Unit · <em>rare</em></div>
+  <div class="kw"><span>RISING</span> <span>ZEAL</span> <span>CONTAGION</span></div>
+  <div class="tx">Enters with Sin(1) on herself (fuels her own ZEAL; she is not stained until 3+). ZEAL (+Might equal to her own Sin). RISING 10: while Breath is 10+, gets +2/+0 and at your upkeep CONTAGION(1) onto an enemy soul (counts against your per-round Contagion cap). A bomb that only wakes up as the clock runs out — cheap on the floor, terrifying near 12.</div>
+  <div class="flav">She had foretold the date for years. Everyone laughed. The water did not.</div><div class="pt">2<span>/</span>5</div>
+</div><div class="card f-drowned r-rare">
+  <div class="hd"><span class="nm">The Spreading Stain</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/the-drowned__the-spreading-stain.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>rare</em></div>
+  <div class="kw"><span>CONTAGION</span></div>
+  <div class="tx">Pay Sin(1) to a friendly soul (UN-SHEDDABLE until your next turn). CONTAGION(1) onto up to TWO enemy souls. The first instance uses your per-round Contagion cap; the second instance is overflow — it is placed only if you pay an additional Sin(1) (also UN-SHEDDABLE until your next turn), otherwise it is not placed. The board-wide stain still costs you a clock to spread.<div class="sin">Sin(1)</div></div>
+  <div class="flav">It is not in one man. It is in the water all men drink.</div>
+</div></div><h2 id="quiet" class="f-quiet">The Quiet <small>Hidden info · blackmail · 13 cards</small></h2><div class="grid"><div class="card f-quiet r-common doctrine">
+  <div class="hd"><span class="nm">The Quiet&#x27;s Ledger</span><span class="cz">Free (Doctrine — in play from T1, indestructible, not part of the 40)</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__the-quiet-s-ledger.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Doctrine</span></div>
+  <div class="tl">Doctrine · <em>common</em></div>
+  <div class="kw"><span>DOCTRINE</span> <span>COIN</span> <span>LEDGER</span></div>
+  <div class="tx">FREE, indestructible, cannot be Detained, smashed, or removed. PASSIVE (COIN): the first time each TURN an enemy soul gains Sin, you may bank 1 COIN — at most 1 from this passive per turn TOTAL across the whole enemy board; max Coin carry 4. Your CONCEAL cost is reduced to a flat 1 Faith. WIN-UNSEEN (Conviction of Secrets): once per turn, if you BOTH minted Quiet Testimony this turn AND ended your previous turn with a concealed Whisper in play, bank 1 Conviction of Secrets (max 1/turn). At 5+ Conviction of Secrets you may call the LEDGER (sorcery-speed action): flip all your concealed Whispers face-up at once; if still at 5+ after they resolve, you win the game.<div class="sin">—</div></div>
+  <div class="flav">Rook never threatened anyone. He simply let them know that he knew.</div>
+</div><div class="card f-quiet r-mythic candidate">
+  <div class="hd"><span class="nm">Cael, the Asset to Sell</span><span class="cz">6</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__cael-the-asset-to-sell.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Candidate</span></div>
+  <div class="tl">Candidate · <em>mythic</em></div>
+  <div class="kw"><span>CANDIDATE</span> <span>VEIL</span> <span>COIN</span> <span>EXPOSE</span> <span>CONTAGION</span> <span>MARTYR</span></div>
+  <div class="tx">CANDIDATE (max 1, legendary). STAIN-ON-STRIKE: damaging Cael gives the attacker Sin = damage dealt. VEIL: enters face-down as a 1/1 cipher; while veiled, at each upkeep bank 1 COIN (respects the Coin carry cap of 4). When Cael is exposed or attacks, flip face-up (becomes 4/6). EXPOSE (Cael&#x27;s action, once/turn, free): expose an enemy soul; then move up to 2 of YOUR banked Coin onto that soul as Sin — the FIRST Coin placed this way ignores the per-round Contagion cap; any beyond the first counts against the normal +1/round cap (pay self-Sin = overflow as usual). MARTYR — bank 2 Coin.<div class="sin">—</div></div>
+  <div class="flav">Everyone wanted the boy. Rook was the only one who first asked what he was worth.</div><div class="pt">4 (face-up; 1 while veiled)<span>/</span>6 (face-up; 1 while veiled)</div>
+</div><div class="card f-quiet r-common">
+  <div class="hd"><span class="nm">Blackmailer&#x27;s Patience</span><span class="cz">Sin(1), 2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__blackmailer-s-patience.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>common</em></div>
+  <div class="kw"><span>EXPOSE</span> <span>COIN</span></div>
+  <div class="tx">EXPOSE an enemy soul, then bank COIN equal to that soul&#x27;s Sin (max 2, and never above your carry cap of 4). The longer you wait, the louder the silence. The self-Sin(1) is voluntary and may not be shed the turn you cast this.<div class="sin">1 (self, un-sheddable this turn)</div></div>
+  <div class="flav">&quot;I&#x27;m in no hurry,&quot; Rook said. That was the whole of the threat.</div>
+</div><div class="card f-quiet r-rare">
+  <div class="hd"><span class="nm">Whisper: The Hireling&#x27;s Name</span><span class="cz">Conceal 1 (Doctrine) / Reveal: Sin(1) + 5 Faith (SORCERY speed)</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__whisper-the-hireling-s-name.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Whisper</span></div>
+  <div class="tl">Whisper · <em>rare</em></div>
+  <div class="kw"><span>WHISPER</span> <span>CONCEAL</span> <span>COIN</span></div>
+  <div class="tx">WHISPER. REVEAL (Sin(1) + 5 Faith, SORCERY speed — flip only on your own main phase, so the opponent can answer it): summon DENIABLE ASSASSIN — a 4/2 with STAIN-ON-STRIKE that must attack this turn; if it kills a soul, bank 2 COIN (within the carry cap). The Sin(1) cost sticks — it is NOT refunded. First flip this turn mints Quiet Testimony.<div class="sin">1 (self, on Reveal, not refunded)</div></div>
+  <div class="flav">By the time anyone read the name aloud, the name had already done its work and gone.</div>
+</div><div class="card f-quiet r-common">
+  <div class="hd"><span class="nm">Whisper: The Marked Coin</span><span class="cz">Conceal 1 (Doctrine) / Reveal 2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__whisper-the-marked-coin.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Whisper</span></div>
+  <div class="tl">Whisper · <em>common</em></div>
+  <div class="kw"><span>WHISPER</span> <span>CONCEAL</span> <span>BRAND</span> <span>COIN</span></div>
+  <div class="tx">WHISPER. REVEAL (2 Faith, instant): BRAND an enemy soul; if it is already stained, also bank 1 COIN (respects the carry cap). First flip this turn mints Quiet Testimony (2/t).<div class="sin">—</div></div>
+  <div class="flav">He paid in a coin that had passed through every hand in the district. Now every hand remembered him.</div>
+</div><div class="card f-quiet r-uncommon">
+  <div class="hd"><span class="nm">Whisper: The Open Door</span><span class="cz">Conceal 1 (Doctrine) / Reveal 3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__whisper-the-open-door.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Whisper</span></div>
+  <div class="tl">Whisper · <em>uncommon</em></div>
+  <div class="kw"><span>WHISPER</span> <span>CONCEAL</span> <span>COIN</span> <span>EXPOSE</span></div>
+  <div class="tx">WHISPER. While concealed: at your upkeep, if any enemy soul is stained, you may bank 1 COIN (counts toward the turn&#x27;s Coin total and the carry cap). REVEAL (3 Faith, instant): deal damage to a target enemy soul equal to its current Sin; if this kills it while it is stained, it goes to ITS controller&#x27;s Subjugated Row. First flip this turn mints Quiet Testimony.<div class="sin">—</div></div>
+  <div class="flav">The door was never locked. It only ever waited to be opened from the inside.</div>
+</div><div class="card f-quiet r-common">
+  <div class="hd"><span class="nm">Informant of the Roads</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__informant-of-the-roads.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>COIN</span></div>
+  <div class="tx">On entry: look at the top 2 cards of an opponent&#x27;s deck, then put them back in any order. If an enemy soul is stained, you may bank 1 COIN (respects the turn total and carry cap).<div class="sin">—</div></div>
+  <div class="flav">She sold the same secret twice and was never wrong about either buyer.</div><div class="pt">2<span>/</span>2</div>
+</div><div class="card f-quiet r-uncommon">
+  <div class="hd"><span class="nm">Deniable Knife</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__deniable-knife.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>VEIL</span> <span>WARD</span> <span>EXPOSE</span></div>
+  <div class="tx">VEIL (enters face-down as a 1/1 cipher; flips face-up when it attacks, becomes 4/2). The FIRST time it flips, it has WARD this combat only and EXPOSEs the soul it is attacking; on later attacks it is a plain 4/2. No one will say they saw it.<div class="sin">—</div></div>
+  <div class="flav">A name, a price, a dark stair. The knife never learned which of the three it was.</div><div class="pt">4 (1/1 cipher while veiled)<span>/</span>2</div>
+</div><div class="card f-quiet r-common">
+  <div class="hd"><span class="nm">Fence of the Ash Market</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__fence-of-the-ash-market.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>common</em></div>
+  <div class="kw"><span>GUARD</span> <span>COIN</span></div>
+  <div class="tx">GUARD. COIN — once/turn, spend 1: gain 1 Faith next turn. A smuggler&#x27;s wall: keeps the road open and the ledger balanced.<div class="sin">—</div></div>
+  <div class="flav">Everything cast into the Ashes came back out through his stall, a little dearer.</div><div class="pt">2<span>/</span>4</div>
+</div><div class="card f-quiet r-uncommon">
+  <div class="hd"><span class="nm">The Quiet Word</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__the-quiet-word.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Rite</span></div>
+  <div class="tl">Rite · <em>uncommon</em></div>
+  <div class="kw"><span>DETAIN</span> <span>COIN</span> <span>EXPOSE</span></div>
+  <div class="tx">DETAIN an exhausted enemy unit (this is a Quiet splash of the verb — mints no Order Testimony; auto-releases after 2 of your rounds as normal). If you spend 2 COIN as you cast this, also EXPOSE the detained unit (revealing it if veiled and counting its Sin).<div class="sin">—</div></div>
+  <div class="flav">He did not need the man gone. He needed him quiet, and remembering why.</div>
+</div><div class="card f-quiet r-uncommon">
+  <div class="hd"><span class="nm">The Sin-Broker&#x27;s Ledger-Stone</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__the-sin-broker-s-ledger-stone.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic</span></div>
+  <div class="tl">Relic · <em>uncommon</em></div>
+  <div class="kw"><span>RELIC</span> <span>COIN</span> <span>CONCEAL</span></div>
+  <div class="tx">RELIC. Once/turn, the first time an enemy soul becomes STAINED (reaches 3+ Sin), you may bank 1 COIN (this is its OWN once/turn instance, separate from the Doctrine passive, but still respects the carry cap of 4). COIN — once/turn, spend 3: draw 1 and you may CONCEAL a Whisper from hand for free. Smashable by Iconoclasm.<div class="sin">—</div></div>
+  <div class="flav">Stone keeps a tally that paper would be ashamed to.</div>
+</div><div class="card f-quiet r-uncommon">
+  <div class="hd"><span class="nm">Mob Inciter</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__mob-inciter.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>uncommon</em></div>
+  <div class="kw"><span>COIN</span> <span>MARTYR</span> <span>EXPOSE</span></div>
+  <div class="tx">When this attacks, you may spend 1 COIN to make one 1/1 &#x27;Rumor&#x27; token that attacks alongside it this turn (the token then leaves play). Limit one Rumor token per turn. MARTYR — bank 1 Coin and EXPOSE an enemy soul.<div class="sin">—</div></div>
+  <div class="flav">He never threw the first stone. He only stood where everyone could see him not throwing it.</div><div class="pt">3<span>/</span>3</div>
+</div><div class="card f-quiet r-rare">
+  <div class="hd"><span class="nm">Rook, Sin-Broker</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/the-quiet__rook-sin-broker.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Soul</span></div>
+  <div class="tl">Soul · <em>rare</em></div>
+  <div class="kw"><span>COIN</span> <span>CONCEAL</span> <span>CONTAGION</span></div>
+  <div class="tx">On entry and at each of your upkeeps, look at the top card of your deck; if it is a Whisper you may CONCEAL it for free. COIN — spend 2: an enemy soul gains Sin(1) (Contagion, within the +1/round cap). Once/turn, spend 1 Coin: draw a card. The Quiet keeps no second copy of Rook&#x27;s price.<div class="sin">—</div></div>
+  <div class="flav">&quot;I don&#x27;t sell secrets,&quot; he said, sliding the ledger across the table. &quot;I sell the day you stop owning them.&quot;</div><div class="pt">3<span>/</span>4</div>
+</div></div><h2 id="realm" class="f-realm">Realm <small>Neutral · 13 cards</small></h2><div class="grid"><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">Road Pilgrim</span><span class="cz">1</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__road-pilgrim.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit (Realm)</span></div>
+  <div class="tl">Unit (Realm) · <em>common</em></div>
+  <div class="kw"><span>GUARD</span></div>
+  <div class="tx">GUARD.</div>
+  <div class="flav">They walk to be seen walking, and pray the road counts as penance.</div><div class="pt">1<span>/</span>2</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">Roadside Penance</span><span class="cz">1</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__roadside-penance.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Spell (Realm)</span></div>
+  <div class="tl">Spell (Realm) · <em>uncommon</em></div>
+  <div class="kw"><span>PENANCE</span></div>
+  <div class="tx">Perform an extra PENANCE on a friendly soul: remove a flat 3 self-Sin (not below 0), OR shed up to 1 FORCED Sin. This does not consume your once-per-turn Penance. (Like all Penance, forced-Sin shedding is throttled to 1 per Penance — it is not free-and-unlimited.)</div>
+  <div class="flav">Kneel where you stand. The dust of the road is as holy as any altar — the priests will deny it, of course.</div>
+</div><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">Alms-Beggar</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__alms-beggar.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit (Realm)</span></div>
+  <div class="tl">Unit (Realm) · <em>common</em></div>
+  
+  <div class="tx">When Alms-Beggar enters, choose one: a chosen player sheds 1 FORCED Sin from one of their souls; or you gain +1 Faith next turn. (This shed counts toward the per-Penance forced-Sin limit — see PENANCE.)</div>
+  <div class="flav">He breaks the bread he was given and gives half away. The Triad, they say, was once this hungry.</div><div class="pt">2<span>/</span>2</div>
+</div><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">Stone from the Crowd</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__stone-from-the-crowd.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Spell (Realm)</span></div>
+  <div class="tl">Spell (Realm) · <em>common</em></div>
+  
+  <div class="tx">Deal 2 damage to any unit. (RESOLVE PERSISTS — this does not heal off.)</div>
+  <div class="flav">A riot has no leader and no name. The first stone is thrown by everyone.</div>
+</div><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">The Collection Plate</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__the-collection-plate.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic (Realm)</span></div>
+  <div class="tl">Relic (Realm) · <em>common</em></div>
+  <div class="kw"><span>RELIC</span></div>
+  <div class="tx">Once per turn, the first time you play a card in a turn, gain +1 Faith next turn — but only if you have a soul that is STAINED or in your Subjugated Row. (Smashable by Iconoclasm.)</div>
+  <div class="flav">The tithe is not a request. The plate goes round, and the plate comes back full, or it comes back for you.</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">The Low Tide</span><span class="cz">2</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__the-low-tide.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Spell (Realm)</span></div>
+  <div class="tl">Spell (Realm) · <em>uncommon</em></div>
+  
+  <div class="tx">Choose one: lower the Breath Clock by 1 (not below 0); or this round the Breath does not rise. (One-of-its-kind decelerant — gives every faction an answer to a runaway Breath.)</div>
+  <div class="flav">The flood is not a god. It is only water, and water can be let out as well as let in. Cassian would have you forget that.</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">Crossroads Bargain</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__crossroads-bargain.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Spell (Realm)</span></div>
+  <div class="tl">Spell (Realm) · <em>uncommon</em></div>
+  
+  <div class="tx">Sin(1): place 1 Sin on a friendly soul; this Sin cannot be shed this turn. Draw 2 cards, then put 1 card from your hand on top of your deck.<div class="sin">Sin(1)</div></div>
+  <div class="flav">Every road that splits is a question, and every answer is a price. Pay it at the crossroads or pay it later.</div>
+</div><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">The Shared Bread</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__the-shared-bread.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Spell (Realm)</span></div>
+  <div class="tl">Spell (Realm) · <em>common</em></div>
+  
+  <div class="tx">Target soul gains +0/+2 (Resolve) until your next turn, and may shed 1 self-Sin (not below 0; voluntary Sin only, not FORCED).</div>
+  <div class="flav">They tore one loaf into five and somehow each was fed. No one spoke of it after. No one had to.</div>
+</div><div class="card f-realm r-common">
+  <div class="hd"><span class="nm">Toll Warden</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__toll-warden.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit (Realm)</span></div>
+  <div class="tl">Unit (Realm) · <em>common</em></div>
+  <div class="kw"><span>GUARD</span></div>
+  <div class="tx">GUARD.</div>
+  <div class="flav">No coin, no crossing. The road belongs to the Triarchate, and so do you.</div><div class="pt">3<span>/</span>3</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">Wayside Shrine</span><span class="cz">3</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__wayside-shrine.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic (Realm)</span></div>
+  <div class="tl">Relic (Realm) · <em>uncommon</em></div>
+  <div class="kw"><span>RELIC</span></div>
+  <div class="tx">At your upkeep, you may shed 1 self-Sin from one friendly soul (voluntary Sin, or 1 FORCED Sin — the forced shed counts toward the per-Penance forced limit). (Smashable by Iconoclasm.)</div>
+  <div class="flav">Three stones stacked at the roadside, a smear of grey ash for an offering. The Triad is unprovable, but the kneeling is real.</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">Ash-Walker</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__ash-walker.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit (Realm)</span></div>
+  <div class="tl">Unit (Realm) · <em>uncommon</em></div>
+  <div class="kw"><span>SUBJUGATE(2)</span></div>
+  <div class="tx">SUBJUGATE(2): reduce incoming damage by up to 2 (capped at 2 by the rules; does not reduce unblocked combat Might). Note: SUBJUGATE the keyword is distinct from CAST-DOWN, the death-to-Subjugated-Row mechanic.</div>
+  <div class="flav">Cast down to the Ashes for a brand he never earned, and yet here, walking, grey from heel to crown.</div><div class="pt">3<span>/</span>4</div>
+</div><div class="card f-realm r-rare">
+  <div class="hd"><span class="nm">Pilgrim&#x27;s Milestone</span><span class="cz">4</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__pilgrim-s-milestone.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Relic (Realm)</span></div>
+  <div class="tl">Relic (Realm) · <em>rare</em></div>
+  <div class="kw"><span>RELIC</span></div>
+  <div class="tx">Once per turn, when an Omen resolves, draw 1 card. (Smashable by Iconoclasm.)</div>
+  <div class="flav">A worn stone counting the leagues to a city no pilgrim has ever reached. Still they walk. Still the road goes on.</div>
+</div><div class="card f-realm r-uncommon">
+  <div class="hd"><span class="nm">Wayhouse Keeper</span><span class="cz">5</span></div>
+  <div class="art"><img loading="lazy" src="art/realm__wayhouse-keeper.png" alt="" onerror="this.remove();this.closest('.art').classList.add('noart')"><span class="ph">Unit (Realm)</span></div>
+  <div class="tl">Unit (Realm) · <em>uncommon</em></div>
+  
+  <div class="tx">When Wayhouse Keeper enters, draw 1.</div>
+  <div class="flav">Every traveller on Roads to Riches sleeps under her roof at least once. She remembers all their faces.</div><div class="pt">4<span>/</span>5</div>
+</div></div>
+<h2 id="omens" class="f-order">The Procession <small>shared Omen deck · 19</small></h2><div class="grid"><div class="omen">
+  <div class="hd"><span class="nm">The Breath Refused</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">FLAGSHIP. A soul stops breathing the Triad&#x27;s smoke and does not die — and the room learns it can be done.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Refusal is treason to be filed): leader DETAINS one exhausted enemy unit and BRANDS it (no Testimony from this Detain). If it was already branded, Breath does not rise from this Dread.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (To stop breathing the smoke is to begin breathing God): sacrifice a friendly unit; it dies as a MARTYR. Bank 1 Conviction of Agony (counts toward the turn&#x27;s max 2 Agony).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (If one can refuse, all can): make two 1/1 Deserter tokens, then deal 2 to one ENEMY Relic. If it smashes, gain 1 Defiance (no Defiance from your own relics).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The Breath belongs to no throne): if Breath did not rise from another source you control this round, Breath +1; one friendly stained soul is immune to seepage until your next turn but gains Sin(1) you may not shed this turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (A refusal seen is a debt owed): CONCEAL the top card of your deck as a Whisper (its Reveal costs 1 more Faith this game). If an enemy soul is stained, draw 1.</div>
+  <div class="dread"><b>Dread</b>DREAD: when this resolves, Breath +1 regardless of leader (counts toward the 1/turn Breath-up-tick cap).</div>
+  <div class="flav">He held the censer out. He did not cough. That was the whole heresy.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Heartbeat</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">KEYSTONE. Beneath the floor, under the brand-scars, a heartbeat that should not be there keeps perfect time.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (A false pulse must be silenced): DETAIN one enemy unit until its controller&#x27;s next turn (sourceless timed Detain; it cannot attack or Testify). Mints no Testimony.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The Saint&#x27;s heart, kept warm): RECUR one MARTYR unit from your graveyard to hand; the recurred card costs Sin(1) to play next (un-sheddable that turn).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (The people&#x27;s drum): each friendly attacker gains +1 Might until end of turn. If you attacked with 3+ AND smashed an enemy Relic this turn, gain 1 Defiance.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The drowned god stirs): every stained soul, friend and foe, takes +1 seepage next upkeep; you may choose ONE of yours to skip it by giving it Sin(1) un-sheddable this turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Whose heart, exactly?): reveal one enemy&#x27;s concealed or veiled card to all players. If it is a unit or removal spell, gain 1 Coin (max carry 4).</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR Breath +1 (within the 1/turn cap).</div>
+  <div class="flav">Lay your ear to the stone, the old woman said. Now tell me what you serve.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Silence</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">The Choir is told to sing and does not. For three breaths, the cathedral holds no sound at all.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Silence is obedience perfected): PENANCE one friendly soul now (shed a flat 3 self-Sin). This does not raise your per-turn self-Sin-shed ceiling.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (In silence the dead are heard): each friendly soul that died this round mints 1 extra Vigil Testimony, still under the 3/turn Testimony cap.</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Silence before the shout): your next Iconoclasm this turn deals 2 to an ENEMY Relic for free; if it smashes, gain 1 Defiance (own relics grant none).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The quiet of held breath): choose one enemy soul; it gains CONTAGION Sin(1) (within the +1/round cap). If it is already stained, instead Breath +1 (within the 1/turn cap).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (The held tongue is the kept tongue): CONCEAL a card from hand as a Whisper. This turn only, its Reveal costs 1 less Faith but you may not Testify.</div>
+  <div class="dread"><b>Dread</b>DREAD: non-leader cannot Testify on their next turn.</div>
+  <div class="flav">Silence is not the absence of the sermon. Silence is its answer.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Culling</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">The wardens go house to house. A list is read. The marked are taken into the grey.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The list is mercy made legible): DETAIN up to two exhausted enemy units until their controller&#x27;s next turn. Mint Order Testimony once (counts as the turn&#x27;s first Detain; max 3/t still applies).</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (Every name taken is a name kept): sacrifice up to 2 friendly units; each dies a MARTYR and you bank 1 Conviction of Agony TOTAL (counts toward the turn&#x27;s max 2).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Cull us and we are a crowd): make one 1/1 Militia token for each friendly unit that died this round (max 3). The tokens are summoning-sick this turn.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The taken are not lost, only welcomed): the first time an enemy unit dies stained this round, place CONTAGION Sin(1) on a different enemy soul (within the +1/round cap).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (The list has a price): if an enemy soul is stained, gain 1 Coin (max carry 4); you may spend it to make one enemy unit unable to block next turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR a non-leader unit is BRANDED.</div>
+  <div class="flav">They did not weep. Weeping was on the list.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Kneeling Revolutionary</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">The man who swore he would never bow is found kneeling — and no one can say whether it is surrender or aim.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Every knee bends in the end): one enemy unit is BRANDED; while branded it cannot benefit from ZEAL this turn.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (He kneels to be remembered): RECUR a MARTYR from graveyard to the board exhausted and summoning-sick; it cannot attack or Testify this turn.</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Kneeling is the wind-up): one friendly attacker gains WARD until end of turn and enters combat with Sin(1) (fueling its ZEAL); it cannot Penance that Sin this turn.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The bowed back drinks deepest): PENANCE one friendly soul (shed 3 self-Sin), then Contagion Sin(1) onto an enemy (within the +1/round cap).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Surrender or aim — only I know): VEIL one friendly unit; while veiled it blocks as a 1/1 cipher. You may flip it for its statline at sorcery speed.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR Breath +1 (within the 1/turn cap).</div>
+  <div class="flav">He knelt. The knife was already under his knee.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Coin of Every Mark</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">A single coin passes through a hundred hands in a day, and every hand it touches it stains.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Tainted coin, taxed and filed): take 1 Faith next turn, but a friendly soul gains Sin(1) you may not shed until your next turn.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (Even coin can be redeemed): shed up to 3 forced Sin across friendly souls for free; if you shed at least 1, sacrifice a friendly unit as a MARTYR to bank 1 Conviction of Agony (toward the turn&#x27;s max 2).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Their coin buys our torches): deal 2 to one ENEMY Relic; if it smashes, gain 1 Defiance and make a 1/1 token (own relics grant no Defiance).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (Every mark, marked): Contagion Sin(1) onto ONE already-stained enemy soul (within the +1/round cap). It does not spread board-wide.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (I hold the ledger): for each stained enemy soul, gain 1 Coin (max 2 from this Omen; max carry 4). Coin may be spent 1-for-1 to deny a Penance next turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: non-leader gains Sin(1) on a soul of leader&#x27;s choice (forced; free to shed at sorcery speed only).</div>
+  <div class="flav">Bite it, the fence said. Tell me it tastes clean.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Brand</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">The iron comes out of the fire. A warm boy is held still. The mark goes in and does not fade.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The mark is the verdict): BRAND one enemy soul; it gains Sin(1) (within the +1/round cap), bringing it closer to STAINED.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The branded is the chosen): one branded friendly unit gains MARTYR until end of turn; if it dies branded this round, bank 1 Conviction of Agony (toward the turn&#x27;s max 2).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Brand us and we burn back): deal 2 to one ENEMY Relic; a branded friendly attacker gains +1 Might this turn (own-relic smashes grant no Defiance).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The brand is a door): one branded soul of any side gains Contagion Sin(1) (within the +1/round cap); if it is a branded stained ENEMY, it takes +1 seepage next upkeep.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (A brand is a name you can sell): if a branded enemy exists, CONCEAL a Whisper; you may later reveal it at sorcery speed to deal 1 to that branded soul.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR a non-leader soul is BRANDED.</div>
+  <div class="flav">It will heal, the confessor lied. It never does.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Riot</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">The first stone is thrown in the market square, and the second hand to throw never decided to.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Order names the first hand): DETAIN the exhausted enemy unit with the most Sin until its controller&#x27;s next turn; if none are exhausted, BRAND the highest-Might enemy.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (Martyrs are made in crowds): when a friendly unit dies in combat this round, mint 1 extra Vigil Testimony (within the 3/turn cap).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (The square is ours): make two summoning-sick 1/1 Mob tokens; if you control 4+ units after AND attacked this turn, deal 2 to the enemy Soul.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (Panic spreads like smoke): Contagion Sin(1) onto the enemy unit that dealt the most damage this round (within the +1/round cap).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Riots are arranged): reveal then re-CONCEAL one of your Whispers; this turn one enemy unit cannot Testify.</div>
+  <div class="dread"><b>Dread</b>DREAD: one non-leader unit of leader&#x27;s choice cannot block on their next turn.</div>
+  <div class="flav">No one led it. That was the terror of it.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The False Saint</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">A relic-mystic parades a boy as the prophesied Saint. Some kneel. Some count the coins it draws.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (A false saint is a confessed heretic): DETAIN and BRAND one enemy unit until its controller&#x27;s next turn; it cannot Testify while detained. Mints no Testimony.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (False or not, the faithful are real): RECUR a MARTYR to hand (costs Sin(1) to play next, un-sheddable that turn); if you control a Candidate, it gains GUARD until end of turn.</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Saints are banners): deal 2 to one ENEMY Relic and make a summoning-sick 1/1 token; if the relic smashes, gain 1 Defiance (own relics grant none).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (Every saint is a vessel): a friendly soul becomes immune to seepage this upkeep, then takes Sin(2) you may not shed until your next turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (A saint is an asset): if you have a concealed Whisper, gain 1 Coin (max carry 4); you may spend 1 Coin to copy one enemy&#x27;s revealed non-win effect at half value this turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR Breath +1 (within the 1/turn cap).</div>
+  <div class="flav">He blessed the bread. The bread was already blessed by hunger.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Voice Speaks</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">Cassian, the Voice of the Triad, addresses the city. What the Triad wants is finally, terribly, clear.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The Voice is the law made audible): take one extra DETAIN this turn at no Faith (until its controller&#x27;s next turn); it mints no Testimony — it is decree, not act.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The Voice lies, and the lie kills): sacrifice a friendly unit as a MARTYR; bank 1 Conviction of Agony (toward the turn&#x27;s max 2), and one enemy soul gains Contagion Sin(1) (within the +1/round cap).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Shout the Voice down): every friendly unit gains +1 Might while attacking this turn; you cannot block on your next turn.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The Voice breathes the smoke too): if Breath did not rise from another source you control this round, Breath +1; one friendly stained soul grows +1/+1 until your next turn while Breath is 8+.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Even the Voice has a price): reveal one enemy hand card to all players; if it is a removal spell, that enemy cannot cast it next turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: Breath +1 (within the 1/turn cap), AND non-leader cannot Penance on their next turn.</div>
+  <div class="flav">He did not raise his voice. He never has had to.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Shared Bread</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">Strangers on the road break one loaf five ways. For a moment, no one is marked.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Charity, properly ordered): shed 3 forced Sin from a friendly soul for free; a different friendly soul gains Sin(1) un-sheddable this turn.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (To share bread is to share death): one friendly unit gains MARTYR; if it dies this round, an ally gains +0/+2 (Resolve) until your next turn.</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Bread for the bodies): make a summoning-sick 1/1 token; if you control fewer units than the leader, make two instead.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (We break bread with the drowned): a chosen enemy gains Contagion Sin(1) (within the +1/round cap) and a chosen friend gains Sin(1) (un-sheddable this turn).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Who counts the loaves counts the debts): if any soul is stained, CONCEAL a card from hand as a Whisper, then draw 1.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR loses 1 banked Conviction (min 0).</div>
+  <div class="flav">Eat, said the beggar, who had less than any of them.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Ashes</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">Past the last toll-gate lies the grey waste where the branded are cast — and where some, impossibly, live.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The Ashes are the final filing): one enemy stained unit takes +2 seepage next upkeep and cannot be Penanced by its controller this turn.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The Ashes return what was thrown away): RECUR a MARTYR from your graveyard OR Subjugated Row to hand; it costs Sin(1) to play next (un-sheddable that turn).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Cast out, and so free): for each ENEMY soul you caused to enter a Subjugated Row this game (max 2 from this Omen), gain 1 Defiance. Your own cast-down souls grant none.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The Ashes welcome all): a friendly unit gains SUBJUGATE(2) and seepage immunity until your next turn; it gains Sin(2) you may not shed until then.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Even the Ashes have a fence): if an enemy soul is in their Subjugated Row, gain 1 Coin (max carry 4); spend it to deny one Recursion next turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR Breath +1 (within the 1/turn cap).</div>
+  <div class="flav">Nothing grows here, the warden said, walking past a fire that was not his.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Toll-Gate</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">Every road to riches passes one gate, and the toll is never the same coin twice.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The gate keeps the ledger): take 1 Faith next turn; a friendly soul gains Sin(1) un-sheddable this turn (the gate remembers who passed).</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The toll is paid in flesh): sacrifice a friendly unit as a MARTYR; gain 2 Faith next turn instead of 1, and bank 1 Conviction of Agony (toward the turn&#x27;s max 2).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Burn the gate): deal 2 to one ENEMY Relic for free; if it smashes, gain 1 Defiance, otherwise make a summoning-sick 1/1 token (own relics grant no Defiance).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The gate takes Sin as coin): an enemy gains Contagion Sin(1) (within the +1/round cap); if it becomes STAINED, take 1 Faith next turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (I am the gate behind the gate): if you have a Whisper, gain 1 Coin (max carry 4); spend it to make one enemy&#x27;s next card cost 1 more Faith.</div>
+  <div class="dread"><b>Dread</b>DREAD: non-leader pays 1 Faith next turn (skips it if at 0).</div>
+  <div class="flav">Pay in silver, or pay in something the gate prefers.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Confession</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">A man is made to confess, and the words that come are true — which is the worst thing that could happen to him.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Confession is the door to penance): force one enemy stained unit to take its full seepage now; you may then PENANCE one friendly soul (does not raise your shed ceiling).</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (Truth costs the truthful): sacrifice a friendly unit as a MARTYR; one enemy reveals and discards a hand card at random, and you bank 1 Conviction of Agony (toward the turn&#x27;s max 2).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Their secrets are our spark): if an enemy revealed a card this round, deal 2 to the enemy Soul and make a summoning-sick 1/1 token.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (Confession is contagion): Contagion Sin(1) onto the enemy soul with the most Sin (within the +1/round cap; it spreads where it already lives).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Every confession is filed by me): reveal one enemy hand card; CONCEAL a Whisper, and if a soul is stained, gain 1 Coin (max carry 4).</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR reveals their hand to the leader.</div>
+  <div class="flav">He told them everything. They had only asked one thing.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Procession</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">The Triad&#x27;s procession winds through the streets, and every faction reads the order of the marchers differently.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The order is the meaning): DETAIN one enemy unit until its controller&#x27;s next turn; while detained it cannot push any Procession Omen. Mints no Testimony.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The dead march at the front): each MARTYR that died this round adds +1 to your push on one other active Omen, up to a total of +2 from this reading (within the 4/Omen and 6/turn push caps).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (We march out of step): make two summoning-sick 1/1 tokens; if you have more units than the leader, one gains +1 Might.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The procession breathes as one): if Breath did not rise from another source you control this round, Breath +1; while Breath is 9+, your push on ONE Omen this turn counts as +1 more (within the 4/Omen and 6/turn caps).</div><div class="rd f-quiet"><b>Quiet</b>QUIET (I count the marchers): peek at the top 2 Omens of the Procession deck and put one on the bottom. If a soul is stained, gain 1 Coin (max carry 4).</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR the next Omen enters with the marker already at +1 toward the leader.</div>
+  <div class="flav">Who walks first, walks last. That was the whole sermon.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Censer Swung</span><span class="cz">Conviction 1</span></div>
+  <div class="fact">The smoke goes up. Twelve swings, one per breath, and the cathedral counts down with it.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The smoke is discipline): one enemy stained soul cannot Penance until its controller&#x27;s next turn and takes its seepage now.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The smoke is incense for the dead): if a friendly soul died this round, RECUR a MARTYR to hand (costs Sin(1) to play next, un-sheddable that turn).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Choke the censer): deal 2 to one ENEMY Relic; if it smashes while Breath is 8+, gain 2 Defiance instead of 1 (own relics grant none).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The smoke is the Breath made visible): one friendly stained soul grows +1/+1 until your next turn; if Breath is 8+, it also gains seepage immunity this upkeep but gains Sin(1) un-sheddable this turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Smoke hides the blade): VEIL one friendly unit; while Breath is 8+ you may flip it to strike at sorcery speed as if it had WARD this turn.</div>
+  <div class="dread"><b>Dread</b>DREAD: Breath +1 regardless of leader (within the 1/turn cap).</div>
+  <div class="flav">When the censer stops, the warden said, so does someone.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Empty Throne</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">The high seat of the Triad is shown to the crowd, and the crowd sees that it has always been empty.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The throne is the office, not the man): DETAIN one enemy unit until its controller&#x27;s next turn. You may bank 1 Conviction of Obedience ONLY IF you have not yet hit your per-turn Obedience cap of 2.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The throne waits for the true Saint): if you control a Candidate, bank 1 Conviction of Agony (toward the turn&#x27;s max 2); otherwise RECUR a MARTYR to hand (Sin(1) to play next).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (No throne, no master): if your Defiance Counter is below 3, gain 1 Defiance ONLY IF you smashed an enemy Relic or cast down an enemy soul this game; otherwise make a summoning-sick 1/1 token.</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The throne drowns like all of them): each stained ENEMY takes +1 seepage next upkeep. If Breath did not rise from another source you control this round, Breath +1.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (Who profits from an empty throne?): reveal whether any enemy holds a Candidate or Doctrine in hand; if so, gain 1 Coin (max carry 4).</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR loses 1 banked Conviction (min 0).</div>
+  <div class="flav">There was no one there. There had never been anyone there.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Drowned Prophet</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">A preacher walks into the floodwater speaking, and keeps speaking, and the water keeps rising, and he does not stop.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (Madness must be contained — and the flood, turned back): DETAIN the most-stained enemy unit until its controller&#x27;s next turn; while detained its seepage is paused. Then Breath -1 (the cell holds the flood; minimum 0).</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The prophet drowns for us): sacrifice a friendly unit as a MARTYR; bank 1 Conviction of Agony (toward the turn&#x27;s max 2), and Breath does not rise from this Dread this once.</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (Even the flood can be turned): deal 2 to one ENEMY Relic; if Breath is 9+, also make a summoning-sick 1/1 token (own-relic smashes grant no Defiance).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The prophet is the door opening): if Breath did not rise from another source you control this round, Breath +1; a friendly Spreader grows +1/+1 and gains seepage immunity this upkeep but gains Sin(1) un-sheddable this turn.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (A prophet draws a crowd, and crowds talk): if Breath is 7+, CONCEAL a Whisper, then draw 1.</div>
+  <div class="dread"><b>Dread</b>DREAD: Breath +1 (within the 1/turn cap), AND each stained soul takes +1 seepage next upkeep.</div>
+  <div class="flav">The tide took his knees, his chest, his chin. The sermon did not pause.</div>
+</div><div class="omen">
+  <div class="hd"><span class="nm">The Last Toll</span><span class="cz">Conviction 2</span></div>
+  <div class="fact">At the end of the road the riches turn out to be the road itself — and the gate behind has already locked.</div>
+  <div class="rd f-order"><b>Order</b>ORDER (The road ends in judgment): one enemy unit is BRANDED, and DETAINED until its controller&#x27;s next turn if exhausted. You may bank 1 Conviction of Obedience ONLY IF you have not yet hit your per-turn Obedience cap of 2.</div><div class="rd f-vigil"><b>Vigil</b>VIGIL (The road ends in the saint): if you have banked 4+ Conviction of Agony, RECUR a MARTYR to the board with GUARD this turn (summoning-sick; costs Sin(1) to keep, un-sheddable this turn).</div><div class="rd f-unbowed"><b>Unbowed</b>UNBOWED (The road was never theirs): if your Defiance Counter is 2+, deal 2 to one ENEMY Relic for free; if it smashes, gain 1 Defiance (own relics grant none).</div><div class="rd f-drowned"><b>Drowned</b>DROWNED (The road ends in the water): if Breath did not rise from another source you control this round, Breath +1; if Breath is 11+, each stained ENEMY takes +2 seepage next upkeep.</div><div class="rd f-quiet"><b>Quiet</b>QUIET (The road ends where I say): peek the top Omen and either keep or bury it; if a soul is stained, gain 1 Coin (max carry 4).</div>
+  <div class="dread"><b>Dread</b>DREAD: leader chooses — non-leader takes 2, OR Breath +1 (within the 1/turn cap); if Breath would reach 12, instead non-leader takes 2.</div>
+  <div class="flav">He had the silver in both hands. He could not find the way back.</div>
+</div></div>
+<h2 id="decks" class="f-order">Starter Decks <small>5 preconstructed</small></h2><div class="deck f-order"><h3>Order of the Triad</h3><p class="doc">Doctrine: <b>The Triune Verdict</b></p><p class="strat">Patient control: Detain and Verdict-lock the enemy board, lean on superior Penance to stay clean, and grind out Omens to bank Conviction of Obedience toward a Judgment win.</p><ul><li><span class="n">1×</span> Cael, the Heretic to Unmake</li><li><span class="n">3×</span> Penitent Conscript</li><li><span class="n">3×</span> Road Inquisitor</li><li><span class="n">3×</span> Confessor&#x27;s Apprentice</li><li><span class="n">3×</span> Templar Warden</li><li><span class="n">3×</span> Choir Sermon-Singer</li><li><span class="n">2×</span> Saint-Aspirant Mira</li><li><span class="n">1×</span> Confessor Corvin, the Voice&#x27;s Hand</li><li><span class="n">3×</span> The Brand</li><li><span class="n">2×</span> Sit in Judgment</li><li><span class="n">2×</span> Hold the Verdict</li><li><span class="n">2×</span> Recant or Burn</li><li><span class="n">1×</span> The Writ of Obedience</li><li><span class="n">2×</span> Wayside Confessional</li><li><span class="n">2×</span> Road Pilgrim</li><li><span class="n">2×</span> Toll Warden</li><li><span class="n">2×</span> Roadside Penance</li><li><span class="n">1×</span> Pilgrim&#x27;s Milestone</li><li><span class="n">1×</span> Wayside Shrine</li><li><span class="n">1×</span> Stone from the Crowd</li></ul></div><div class="deck f-vigil"><h3>The Vigil</h3><p class="doc">Doctrine: <b>The Long Vigil</b></p><p class="strat">Martyr engine: cheap Souls that want to die, recurred again and again to bank Conviction of Agony two-per-turn until the Saint rises at 5.</p><ul><li><span class="n">1×</span> Cael, the Promised Saint</li><li><span class="n">3×</span> Pilgrim-Watcher</li><li><span class="n">3×</span> Penitent of the Watch</li><li><span class="n">3×</span> Name-Seeker</li><li><span class="n">3×</span> Relic-Mystic</li><li><span class="n">3×</span> Martyr of the Threshold</li><li><span class="n">2×</span> Choir of the Dying</li><li><span class="n">1×</span> Tobin, Keeper of the Names</li><li><span class="n">1×</span> Saint-Aspirant</li><li><span class="n">3×</span> Offer to the Breath</li><li><span class="n">2×</span> The Wall of Names</li><li><span class="n">2×</span> Agony Made Manifest</li><li><span class="n">2×</span> Reliquary of the Fallen</li><li><span class="n">2×</span> Road Pilgrim</li><li><span class="n">2×</span> Alms-Beggar</li><li><span class="n">2×</span> Stone from the Crowd</li><li><span class="n">2×</span> The Shared Bread</li><li><span class="n">1×</span> Wayside Shrine</li><li><span class="n">1×</span> Pilgrim&#x27;s Milestone</li><li><span class="n">1×</span> Roadside Penance</li></ul></div><div class="deck f-unbowed"><h3>The Unbowed</h3><p class="doc">Doctrine: <b>The Defiance Made Manifest</b></p><p class="strat">Go-wide swarm and iconoclasm: flood RIOTER tokens, stain-and-cast-down enemy souls, smash enemy relics, and race the Defiance Counter to 3 for Abolition.</p><ul><li><span class="n">1×</span> Cael, the Banner Unbroken</li><li><span class="n">3×</span> Road Militia</li><li><span class="n">3×</span> Deserter Rabble</li><li><span class="n">3×</span> Peasant Levy</li><li><span class="n">3×</span> Turncoat Knight</li><li><span class="n">3×</span> Arsonist of the Quarter</li><li><span class="n">3×</span> Brand-the-Iron</li><li><span class="n">1×</span> Garrick, Firebrand of the Roads</li><li><span class="n">1×</span> The Mob Entire</li><li><span class="n">3×</span> Throw the First Stone</li><li><span class="n">3×</span> Pull It Down</li><li><span class="n">2×</span> The Kneeling Refused</li><li><span class="n">1×</span> Garrick&#x27;s Last Word</li><li><span class="n">2×</span> The Burning Idol</li><li><span class="n">1×</span> The Standard of the Roads</li><li><span class="n">2×</span> Road Pilgrim</li><li><span class="n">2×</span> Stone from the Crowd</li><li><span class="n">1×</span> The Collection Plate</li><li><span class="n">1×</span> Crossroads Bargain</li><li><span class="n">1×</span> Alms-Beggar</li></ul></div><div class="deck f-drowned"><h3>The Drowned</h3><p class="doc">Doctrine: <b>The Welcomed Tide</b></p><p class="strat">Contagion control that scales with the rising Breath: stain the enemy board, push the clock, harden your RISING walls, and pay the Immunity Tax to out-survive the flood.</p><ul><li><span class="n">1×</span> Cael, the Open Door</li><li><span class="n">3×</span> Willing Subjugate</li><li><span class="n">3×</span> Breath Spreader</li><li><span class="n">3×</span> Welcomed Branded</li><li><span class="n">3×</span> Apostate Preacher</li><li><span class="n">2×</span> Drowned Choir</li><li><span class="n">2×</span> The Mad Prophet</li><li><span class="n">1×</span> Silas, Voice in the Flood</li><li><span class="n">3×</span> High Tide</li><li><span class="n">3×</span> Confession by Drowning</li><li><span class="n">2×</span> Sermon of the Rising</li><li><span class="n">2×</span> The Spreading Stain</li><li><span class="n">1×</span> The Drowning Font</li><li><span class="n">2×</span> Ash-Walker</li><li><span class="n">2×</span> Road Pilgrim</li><li><span class="n">2×</span> Stone from the Crowd</li><li><span class="n">1×</span> Wayhouse Keeper</li><li><span class="n">2×</span> The Shared Bread</li><li><span class="n">1×</span> Wayside Shrine</li><li><span class="n">1×</span> Crossroads Bargain</li></ul></div><div class="deck f-quiet"><h3>The Quiet</h3><p class="doc">Doctrine: <b>The Quiet&#x27;s Ledger</b></p><p class="strat">Hidden-info tempo and blackmail: bank Coin off the enemy&#x27;s Sin, conceal Whispers to ambush and assassinate, and grind Conviction of Secrets toward the public Ledger reveal.</p><ul><li><span class="n">1×</span> Cael, the Asset to Sell</li><li><span class="n">3×</span> Informant of the Roads</li><li><span class="n">3×</span> Fence of the Ash Market</li><li><span class="n">3×</span> Deniable Knife</li><li><span class="n">2×</span> Mob Inciter</li><li><span class="n">1×</span> Rook, Sin-Broker</li><li><span class="n">3×</span> Whisper: The Marked Coin</li><li><span class="n">3×</span> Whisper: The Open Door</li><li><span class="n">2×</span> Whisper: The Hireling&#x27;s Name</li><li><span class="n">3×</span> Blackmailer&#x27;s Patience</li><li><span class="n">2×</span> The Quiet Word</li><li><span class="n">2×</span> The Sin-Broker&#x27;s Ledger-Stone</li><li><span class="n">2×</span> Road Pilgrim</li><li><span class="n">2×</span> Toll Warden</li><li><span class="n">2×</span> Stone from the Crowd</li><li><span class="n">2×</span> Crossroads Bargain</li><li><span class="n">1×</span> The Collection Plate</li><li><span class="n">1×</span> Alms-Beggar</li><li><span class="n">1×</span> Wayhouse Keeper</li><li><span class="n">1×</span> Pilgrim&#x27;s Milestone</li></ul></div>
+<p class="note">TRIARCHATE · Roads to Riches · a living draft — costed vs v2, balance patch pending</p>
+</div></body></html>
