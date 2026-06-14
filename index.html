@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14110d">
+<title>Triarchate — Codex</title>
+<style>
+  :root{
+    --bg:#14110d; --bg2:#1d1812; --ink:#e8ddc8; --ink-dim:#b3a888;
+    --gold:#c8a45a; --gold-dim:#8c7338; --rule:#3a3026; --blood:#8a3b2e;
+    --card:#1a1510;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:18px/1.7 Georgia,'Iowan Old Style','Times New Roman',serif;
+    padding:0 0 5rem;
+  }
+  .wrap{max-width:44rem; margin:0 auto; padding:0 1.15rem}
+  header.top{
+    text-align:center; padding:2.4rem 1rem 1.4rem; border-bottom:1px solid var(--rule);
+    background:linear-gradient(#1d1812,#14110d);
+  }
+  header.top h1{
+    font-size:2.1rem; letter-spacing:.22em; margin:.2rem 0 .1rem; color:var(--gold);
+    font-variant:small-caps; font-weight:600;
+  }
+  header.top .sub{color:var(--ink-dim); font-style:italic; font-size:1rem; letter-spacing:.02em}
+  header.top .tag{color:var(--gold-dim); font-size:.8rem; letter-spacing:.3em; text-transform:uppercase; margin-top:.6rem}
+  h2{
+    color:var(--gold); font-variant:small-caps; letter-spacing:.12em; font-size:1.5rem;
+    margin:2.6rem 0 .2rem; padding-top:1.2rem; border-top:1px solid var(--rule); font-weight:600;
+  }
+  h3{color:#e3c98f; font-size:1.18rem; margin:1.6rem 0 .3rem; letter-spacing:.02em}
+  h4{color:var(--ink); font-size:1rem; margin:1.1rem 0 .2rem; letter-spacing:.04em; text-transform:uppercase; font-family:system-ui,sans-serif}
+  p{margin:.7rem 0}
+  em{color:#ecd9a8}
+  a{color:var(--gold); text-decoration:none}
+  .lede{font-style:italic; color:var(--ink-dim)}
+  nav.toc{margin:1.4rem 0 .4rem; font-family:system-ui,-apple-system,sans-serif; font-size:.95rem}
+  nav.toc a{display:block; padding:.55rem .2rem; border-bottom:1px solid var(--rule); color:var(--ink)}
+  nav.toc a span{color:var(--gold-dim); font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; float:right}
+  blockquote{
+    margin:1rem 0; padding:.6rem 0 .6rem 1rem; border-left:3px solid var(--gold-dim);
+    color:var(--ink-dim); font-style:italic;
+  }
+  details{border:1px solid var(--rule); border-radius:7px; margin:.8rem 0; background:var(--bg2); overflow:hidden}
+  details>summary{
+    cursor:pointer; padding:.85rem 1rem; font-family:system-ui,sans-serif; font-size:.95rem;
+    letter-spacing:.04em; color:var(--gold); list-style:none; font-weight:600;
+  }
+  details>summary::-webkit-details-marker{display:none}
+  details>summary::before{content:"▸ "; color:var(--gold-dim)}
+  details[open]>summary::before{content:"▾ "}
+  details>summary:hover{background:#221b13}
+  .det-body{padding:0 1rem 1rem}
+  .ch{margin:1.05rem 0; padding-bottom:.85rem; border-bottom:1px dotted var(--rule)}
+  .ch .num{font-family:system-ui,sans-serif; font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-dim)}
+  .ch .pov{color:#e3c98f; font-style:italic}
+  .ch .hook{color:var(--ink-dim); font-style:italic; font-size:.95rem; margin-top:.25rem}
+  .ch .hook::before{content:"⟶ "; color:var(--blood)}
+  .prose p:first-of-type::first-letter{
+    font-size:3.2rem; line-height:.8; float:left; padding:.05em .12em 0 0; color:var(--gold); font-weight:600;
+  }
+  hr.scene{border:0; text-align:center; margin:1.6rem 0}
+  hr.scene::before{content:"※"; color:var(--gold-dim); letter-spacing:.5em}
+  .omen{border:1px solid var(--gold-dim); border-radius:8px; background:var(--card); padding:1rem 1.05rem; margin:1.1rem 0; box-shadow:0 2px 14px #0007}
+  .omen .title{color:var(--gold); font-variant:small-caps; letter-spacing:.1em; font-size:1.15rem}
+  .omen .fact{font-style:italic; color:var(--ink); margin:.4rem 0 .7rem}
+  .omen .r{margin:.28rem 0; font-size:.95rem}
+  .omen .r b{font-family:system-ui,sans-serif; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-dim); display:inline-block; min-width:5.2em}
+  .omen .dread{margin-top:.6rem; color:#d6a08f; font-size:.92rem}
+  .omen .fl{margin-top:.5rem; color:var(--ink-dim); font-style:italic; font-size:.9rem; border-top:1px solid var(--rule); padding-top:.5rem}
+  .spoiler summary{color:var(--blood)}
+  .spoiler{border-color:var(--blood)}
+  .grid5{display:flex; flex-direction:column; gap:.5rem; margin:.6rem 0}
+  .fac{border:1px solid var(--rule); border-radius:6px; padding:.6rem .8rem; background:var(--bg2)}
+  .fac b{color:var(--gold)}
+  .fac .creed{color:var(--ink-dim); font-style:italic; font-size:.92rem}
+  .note{font-family:system-ui,sans-serif; font-size:.8rem; color:var(--gold-dim); text-align:center; margin-top:2.5rem; letter-spacing:.05em}
+  .pill{display:inline-block; font-family:system-ui,sans-serif; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--bg); background:var(--gold-dim); border-radius:20px; padding:.12em .7em; vertical-align:middle}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="tag">A Trading Card Game &amp; Its Books</div>
+  <h1>Triarchate</h1>
+  <div class="sub">Codex — world, game, and the first book</div>
+</header>
+
+<div class="wrap">
+
+  <p class="lede">In one mortal realm ruled by a god's Church, every soul is taught that all suffering is its own sin made manifest. Five factions, each certain it alone knows the truth about the silent gods, circle the secret that could shatter the world: a branded outcast in the slums who is the god himself — amnesiac, and afraid.</p>
+
+  <nav class="toc">
+    <a href="#book">Book One — <em>Roads to Riches</em> <span>the story</span></a>
+    <a href="#world">The World <span>the bible</span></a>
+    <a href="#game">The Game <span>how it plays</span></a>
+  </nav>
+
+  <!-- ============ BOOK ONE ============ -->
+  <h2 id="book">Book One — Roads to Riches</h2>
+  <p class="lede">An ensemble thriller in five voices. The boy at the center is never a narrator — we know him only through five sets of eyes that each see a different person. Only the reader ever assembles the truth.</p>
+
+  <h3>The five lenses (and the boy)</h3>
+  <div class="grid5">
+    <div class="fac"><b>Confessor Corvin</b> — Order <span class="pill">anchor</span><div class="creed">A hollowed veteran who has branded souls for thirty years and no longer believes. He will hunt his own god as a heretic — and never let himself know it.</div></div>
+    <div class="fac"><b>Tobin</b> — the Vigil <span class="pill">heart</span><div class="creed">A fresh, hopeful recruit handed a cause worthy of his ambition. The one who dares to believe. A coming-of-age in the dark.</div></div>
+    <div class="fac"><b>Garrick</b> — the Unbowed<div class="creed">An ice-cold deserter whose wife and daughter were branded while he branded strangers. The atheist who comes to <em>need</em> a god — to bring his family back.</div></div>
+    <div class="fac"><b>Silas</b> — the Drowned<div class="creed">A brilliant, deranged killer who wants to end the world. Near the boy, for the first time in memory, the noise in his head goes silent.</div></div>
+    <div class="fac"><b>Rook</b> — the Quiet <span class="pill">engine</span><div class="creed">A suave Ashes rogue who knew the boy before the miracle — now selling what he knows while scrambling to learn what his friend really is.</div></div>
+    <div class="fac"><b>Cael</b> — the Candidate <span class="pill">never a POV</span><div class="creed">A bright, warm young man of the slums; kind, selfless, quietly unnerved that his luck is astounding "for who he thinks he is." The gentlest soul in the Ashes is the hunted god, and he has no idea.</div></div>
+  </div>
+
+  <h3>Read the opening chapter</h3>
+  <details open>
+    <summary>Chapter One — The Brand Takes · <em>Confessor Corvin</em></summary>
+    <div class="det-body prose">
+      <p>The iron came out of the brazier the color of a sunset no one in the Ashes would ever afford to watch.</p>
+      <p>Corvin held it the way he held everything now: without thought. Thirty years had worn the prayer down to a groove in him, so that the words ran on while the rest of him stood somewhere off to the side, watching. <em>The Breath fills all the air the Triad breathed. A clean soul lets it pass. A stained soul lets it in.</em> He did not believe the words anymore. He had stopped noticing whether he believed them, which was worse, the way a man stops noticing a tooth has gone dead until the day it crumbles in his mouth.</p>
+      <p>The penitent was a cooper named Edrin. Forty-some, hands ruined by the trade, a face that had cried itself empty before Corvin ever lifted the brand. His sins, as confessed, were these: his roof had fallen and killed his son. His well had soured. His wife had taken a fever that bent her into the shape of a question mark and left her there. Three misfortunes, and the doctrine permitted only one reading of them. Misfortune was the Breath finding the gaps in a soul. Where the gods touched a man, the man had given them a door.</p>
+      <p>So Edrin had sinned. The proof was that Edrin suffered. There was no other proof allowed, and so there needed to be no other proof at all. This was the genius of it, Corvin thought — the thought arriving uninvited, the way they did lately, slipping in through some gap of his own. The doctrine could not be wrong. Every wound confirmed it. The whole realm policed itself with its own grief.</p>
+      <p>"Hold him," Corvin said.</p>
+      <p>Two acolytes took the cooper's arms. The lower cells of the High Choir smelled of tallow and scorched skin and the cold stone sweat of a building that had been damning people since before Corvin's grandfather drew breath. Somewhere above them, the cathedral was singing. It was always singing. The Triad heard, or did not, and only the Voice could say which, and the Voice was three streets and one impossible gulf of station away from this room.</p>
+      <p>The iron touched the cooper's collarbone.</p>
+      <p>Edrin screamed the way they all screamed, and Corvin's hand did not shake.</p>
+      <p>That was the thing. That was the small horror he carried home each night like a stone in his boot. Not the screaming — he had made his peace with the screaming, or rather he had stopped having peace to make. It was his own hand. Steady as a mason's level. A young confessor's hand shook; it meant something to him still, the searing of a soul. Corvin's hand had not trembled in eleven years. He had measured it once, on purpose, holding the iron a foot from a man's flesh and watching his own knuckles for any flicker of the human thing that ought to live there. Nothing. He had branded the divine mark into that man with the calm of a clerk stamping wax.</p>
+      <p>If the god was real, Corvin had thought that night, then surely the god should object to being served by a man who felt nothing. And if the god was not real—</p>
+      <p>He had not finished the sentence then. He did not finish it now. He had become very skilled at not finishing it.</p>
+      <p>The brand lifted. The mark would scar into the shape the doctrine demanded, and Edrin the cooper would walk out the gate into the Ashes, branded, which was to say cast out, which was to say already counted among the dead the living were permitted to ignore. Corvin set the iron back in the coals.</p>
+      <p>"It is done," he said. "The Triad sees you."</p>
+      <p>Edrin lifted his head. The fever and the grief and the fire had burned something loose in him, some hinge that kept ordinary men quiet, and he looked at Corvin not with hate but with a terrible, patient curiosity, as if Corvin were a lock he had decided, too late, to try.</p>
+      <p>"Tell me one thing, Confessor." His voice was a wreck. "If the god is real—" and here Corvin's stomach dropped, because the man was about to say it, the thing, the sentence Corvin had spent three decades refusing to finish for himself "—why does it only ever speak through the men who profit from it?"</p>
+      <p>The cell was very quiet. Even the cathedral, for a breath, seemed to hold its note.</p>
+      <p>Corvin had an answer. He had a hundred answers; he had been issued them, the way a soldier is issued a sword, and like a sword each one was made to end a conversation rather than have one. He opened his mouth to deploy whichever came first.</p>
+      <p>Nothing came.</p>
+      <p>He stood in the tallow-light with the heat of the brand still ghosting his palm and discovered, to his own quiet terror, that the man had asked him the only question that mattered and he had no sanctioned reply that he himself believed. The silence stretched. The acolytes shifted. And Corvin understood that he had just failed, in the smallest possible way, in front of witnesses too low to matter — but failed all the same, after thirty years, to defend the thing he had given his life to.</p>
+      <p>"Take him out," he said.</p>
+      <p>They took him out.</p>
+      <hr class="scene">
+      <p>The junior inquisitor was waiting in the antechamber with a file and the particular eagerness of a young man who has found something his superiors will reward him for noticing. Corvin knew him only as Mell — narrow, ambitious, the kind who would one day hold an iron with an unshaking hand and never wonder why.</p>
+      <p>"Confessor. The brand-rolls." Mell held out the file like an offering. "There's an irregularity. An Ashes ward, registered branded as an infant — the record's there, the mark's recorded — but I cross-checked against the confessions, the rite-rolls, everything for twenty years." He paused for the weight of it. "No confessor has ever read him as stained. Not once. Every reading comes back the same."</p>
+      <p>Corvin took the file. It was thin. Most lives in the Ashes were thin on paper, however thick the suffering.</p>
+      <p>"The same how?"</p>
+      <p>"Clean," Mell said, and lowered his voice on the word as if it were obscene, which in this building it was. "Untouched. The Breath won't take in him. I checked it three ways. It's likely an error, an old clerk's hand, the ink — but I thought—"</p>
+      <p>"You thought correctly to bring it." Corvin opened the file. A name. A ward. A string of small notations in the dry shorthand of the rite, each one a confessor's hand recording, across twenty years, the same impossible nothing. The catastrophes of the world bent around this one and never bit. Drunk witnesses. Corrupted lines. Coincidence stacked on coincidence until the stack itself became a thing he did not want to look at directly.</p>
+      <p>Above them the cathedral was still singing, and out beyond its walls the Ashes were already beginning, though Corvin did not yet know it, to smoke. Tonight the slum would burn, and the Voice would answer the fire with a rite, and Corvin would be made to officiate it — a thousand souls where he was used to one. And somewhere in that doomed warren a young man whose only recorded sin was that misfortune kept refusing him would be sitting with the dying, because that was where he always sat.</p>
+      <p>Corvin closed the file on the name. He did not believe in omens. He had branded omens out of better men than himself.</p>
+      <p>He read the name again anyway.</p>
+      <p><em>Cael,</em> it said. Nothing more.</p>
+    </div>
+  </details>
+
+  <h3>The shape of it</h3>
+  <p>Thirty-two chapters, three movements, the five voices cut between Game-of-Thrones style and spiralling inward until every road closes on one boy at once.</p>
+
+  <details>
+    <summary>Movement I — The Noticing (Ch. 1–11)</summary>
+    <div class="det-body">
+      <p class="lede">Five worlds, one spark. Each lens gets one legible wound; Cael is seen only obliquely. Ends as the Ashes catch fire.</p>
+      <div class="ch"><span class="num">Ch 1 · Corvin</span><br>Brands a penitent whose only "sin" is bad luck — the world's doctrine delivered through his steady, horrifying hand. A junior flags a ward the iron has never read as stained.<div class="hook">The penitent asks why the god only speaks through men who profit from it. Corvin has no answer — only a thin file on a boy named Cael.</div></div>
+      <div class="ch"><span class="num">Ch 2 · Rook</span><br>The warmest look at Cael: the friend who gives away his last coin, unnerved his luck is "too good for who I am."<div class="hook">A cart that should crush Cael splinters around him. Rook goes quiet — and a stranger in inquisitor grey is writing it down.</div></div>
+      <div class="ch"><span class="num">Ch 3 · Tobin</span><br>Taught the heresy that defines his life: the Church <em>imprisoned</em> the Triad, and a Saint can be raised to free it.<div class="hook">"Misfortune will refuse him — and he won't even notice." A description of a boy three streets over.</div></div>
+      <div class="ch"><span class="num">Ch 4 · Corvin</span><br>Audits the boy's survivals — every one deniable. Starts a private ledger of the unstained.<div class="hook">A superior buries the file "on the Voice's own instruction." Which means Cassian already knows.</div></div>
+      <div class="ch"><span class="num">Ch 5 · Rook</span><br>Tests Cael's luck with rigged dice; Cael wins clean, oblivious. Rook starts selling thin slices of "a lucky kid."<div class="hook">The broker pays triple — four other buyers are already bidding. His grin slips.</div></div>
+      <div class="ch"><span class="num">Ch 6 · Garrick</span><br>The wound, full force: he kept the brand-rolls until he found his own wife's and daughter's names.<div class="hook">"Ask me when you've branded someone you love." Anything the Church fears, he wants.</div></div>
+      <div class="ch"><span class="num">Ch 7 · Silas</span><br>Inside the fractured, brilliant mind; a surgical "offering" to the Wrath; the creed that the road to the end runs through the Voice.<div class="hook">For one second the noise STOPS — a boy helping an old man up. Silas would burn the world to feel that quiet again.</div></div>
+      <div class="ch"><span class="num">Ch 8 · Tobin</span><br>Nearly blows his cover; is saved by a stranger's kindness — later realizes it was Cael.<div class="hook">"I think I've met him. And he doesn't know what he is."</div></div>
+      <div class="ch"><span class="num">Ch 9 · Garrick</span><br>Read into the riot plan; warned the Drowned want the same fire for the Culling.<div class="hook">A Saint who'll "undo the Breath's works" — a flicker: a Saint could undo a branding. He kills the thought. It doesn't stay dead.</div></div>
+      <div class="ch"><span class="num">Ch 10 · Silas</span><br>Confirms only Cael quiets the noise; reframes him as a DOOR to the Voice and the end.<div class="hook">In fire and slaughter, no one notices one quiet man leading one quiet boy away.</div></div>
+      <div class="ch"><span class="num">Ch 11 · Rook</span><br>Learns Cael's whole world sits on the fuse; begs him to hide.<div class="hook">Cael smiles and goes to sit with the dying. The fuse is lit, and every eye is turning toward the same slum.</div></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Movement II — The Circling (Ch. 12–24)</summary>
+    <div class="det-body">
+      <p class="lede">Five roads to one boy. The Culling falls; the miracle detonates each wound into obsession; the strands braid, ally, and betray.</p>
+      <div class="ch"><span class="num">Ch 12 · Corvin</span><br><b>The Spark / The Culling.</b> The Voice sanctions a public mass rite; Corvin must officiate a thousand souls. He sees Cael among the condemned and, for once, wants the god to be merciful.<div class="hook">Every branded soul drops — except Cael, standing alone in a field of the fallen. Corvin watches his doctrine break in his hands.</div></div>
+      <div class="ch"><span class="num">Ch 13 · Rook</span><br>Drags Cael clear; sees it; love and avarice fuse into the book's engine.<div class="hook">"Rook, why didn't I die? What's WRONG with me?" — and four factions are about to come running.</div></div>
+      <div class="ch"><span class="num">Ch 14 · Tobin</span><br>Knows the Saint has come — and that he's already met him. Elevated overnight to the cell's link to the Saint.<div class="hook">Ordered to bring Cael in "for his protection." Salvation and abduction look identical from outside.</div></div>
+      <div class="ch"><span class="num">Ch 15 · Garrick</span><br>If a Saint can refuse the Breath, a Saint can <em>undo</em> it — bring HER back. The god-killer becomes the one who most needs a god.<div class="hook">To reach Cael he deals with the broker who knows what a man will pay to undamn his daughter.</div></div>
+      <div class="ch"><span class="num">Ch 16 · Silas</span><br>The silence floods him at full strength — confirmation. Near the quiet his mind sharpens to a scalpel; he plays the soft-spoken rescuer.<div class="hook">Sane for the first time in memory, he decides he'll never let the boy out of his sight.</div></div>
+      <div class="ch"><span class="num">Ch 17 · Corvin</span><br>Lies in his report, then realizes a dozen others saw it. Put in charge of the hunt. The central irony crystallizes.<div class="hook">He writes "The Breath did not refuse him. It KNEW him," scratches it out, and rides for the Ashes.</div></div>
+      <div class="ch"><span class="num">Ch 18 · Rook</span><br>Hides Cael in the Market's tunnels; sells fragments to all four factions, telling himself each coin buys Cael's escape.<div class="hook">The traffickers aren't after turf — they're shopping for the same boy. His two worlds collide.</div></div>
+      <div class="ch"><span class="num">Ch 19 · Tobin</span><br>Defies the hardliners to <em>warn</em> Cael. Meets a frightened, generous young man with no idea he's anyone's prophecy.<div class="hook">"What if it's just luck?" — and the Vigil intends to SPEND him to free the Triad.</div></div>
+      <div class="ch"><span class="num">Ch 20 · Garrick</span><br>Takes the boy — and can't do the thing he came for. There's no lever, just a kind boy asking after the strangers who got hurt.<div class="hook">Cael mentions a kindness once shown Garrick's mother — a detail he can't possibly know.</div></div>
+      <div class="ch"><span class="num">Ch 21 · Corvin</span><br>His hunt converges on Rook. He surfaces the erased anomalies — prior "untouched" souls the Church has quietly deleted for generations.<div class="hook">"You're not here to brand him. You saw it too." Corvin doesn't deny it. Hunter and hider, uneasy allies.</div></div>
+      <div class="ch"><span class="num">Ch 22 · Tobin</span><br><b>The False Saint.</b> The Order seizes the wrong man — a volunteer who chose to die as the Saint to shield Cael. Trust fractures everywhere.<div class="hook">The real boy is loved, hidden, and more dangerous to the Church than any heretic.</div></div>
+      <div class="ch"><span class="num">Ch 23 · Rook</span><br>Brokers a knife's-edge alliance with Garrick (both secretly Quiet-funded). His bosses spring the trap: they've sold Cael's location.<div class="hook">The buyer is the Church itself — the Voice is reaching into the Ashes.</div></div>
+      <div class="ch"><span class="num">Ch 24 · Silas</span><br><b>The Voice Speaks.</b> Cassian has decreed the Candidate be taken or UNMADE. Every road now points to one room.<div class="hook">When every faction crashes over the boy at once, he'll ride the chaos to the Voice's throat.</div></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Movement III — The Convergence (Ch. 25–32)</summary>
+    <div class="det-body">
+      <p class="lede">All roads, one heartbeat. <span style="color:var(--blood)">(Contains the ending.)</span></p>
+      <div class="ch"><span class="num">Ch 25 · Garrick</span><br>The city tightens to the district where Cael tends the wounded. Garrick preps an extraction, hope hardened to zealotry.<div class="hook">All five roads have arrived at once. The only way out is through every faction in the realm.</div></div>
+      <div class="ch"><span class="num">Ch 26 · Rook</span><br>Moves to get Cael out as the collision erupts; the Quiet's final offer: a generational fortune for the location, now.<div class="hook">"Did you sell me?" Rook opens his mouth — the wall blows in. The question hangs.</div></div>
+      <div class="ch"><span class="num">Ch 27 · Corvin</span><br><b>The Roads Converge.</b> All five factions churn into one catastrophe with Cael at the center. Corvin fights to reach him first — to KNOW.<div class="hook">He reaches Cael, finds no stain at all, comes within one word of understanding — and cannot say it.</div></div>
+      <div class="ch"><span class="num">Ch 28 · Garrick</span><br><b>The Heartbeat — before.</b> On his knees: "just TRY — bring her back." Cael weeps: "I can't. I don't know how."<div class="hook">Hands closing from five directions, Cael shuts his eyes and wishes it all to stop — and the air goes wrong.</div></div>
+      <div class="ch"><span class="num">Ch 29 · Silas</span><br><b>The Heartbeat — peace.</b> The god wakes for one beat; Silas alone feels absolute silence, and weeps.<div class="hook">He touches the thing he most wants to end — and chooses to die inside the silence rather than lose it.</div></div>
+      <div class="ch"><span class="num">Ch 30 · Corvin</span><br><b>The Heartbeat — faith-roar.</b> His dead faith roars back; for one beat he KNOWS. Then it collapses; Cael is just a boy with no memory. The one man who could name it refuses to.<div class="hook">He gets Cael moving toward the dark, telling himself it was nothing — and not believing himself for the first time in his life.</div></div>
+      <div class="ch"><span class="num">Ch 31 · Tobin</span><br><b>The Heartbeat — after.</b> The factions scatter with irreconcilable accounts. Tobin gets Cael clear and chooses to keep the secret to protect him.<div class="hook">"What just happened?" "Nothing. You're safe." The reader alone knows there's no longer any difference between the boy and the god.</div></div>
+      <div class="ch"><span class="num">Ch 32 · Rook</span><br><b>Coda.</b> The realm tips toward holy war. Cael lives, gentle, oblivious. A broker is at Rook's ear with the offer again.<div class="hook">"Whatever you are, friend... you're worth more alive" — his hand half-closing on the coin, his answer ungiven. The reader knows what he does not.</div></div>
+    </div>
+  </details>
+
+  <h3>The first cards, born from the book</h3>
+  <p class="lede">Every Omen is one event seen five ways; only the leading faction's reading comes true. The card never names the truth — exactly like the novel.</p>
+
+  <div class="omen">
+    <div class="title">The Breath Refused <span class="pill">flagship</span></div>
+    <div class="fact">The rite falls on a thousand branded souls. Every one drops, taken. One boy stands alone, untouched, in a field of the fallen.</div>
+    <div class="r"><b>Order</b> A counterfeit — no soul at all. It must be unmade.</div>
+    <div class="r"><b>Vigil</b> The sign at last. The Saint has come, and the cage will open.</div>
+    <div class="r"><b>Unbowed</b> Proof the rite is theater. One stood because the gods are nothing.</div>
+    <div class="r"><b>Drowned</b> The Wrath has chosen its vessel. The door now wears a kind face.</div>
+    <div class="r"><b>Quiet</b> One boy in a field of corpses. Have you any idea what that's worth?</div>
+    <div class="dread"><b>Dread</b> — Every faction saw it. None saw the same thing. Only the reader sees the boy.</div>
+    <div class="fl">A single uncaptured figure in a field of the fallen — one image, five meanings, and never the truth.</div>
+  </div>
+
+  <div class="omen">
+    <div class="title">The Heartbeat <span class="pill">keystone</span></div>
+    <div class="fact">At the center of the collision, with hands closing from five directions, the boy shuts his eyes and wishes it all to stop — and the air goes wrong.</div>
+    <div class="r"><b>Order</b> A heresy I felt at arm's reach. I will not say the word for it.</div>
+    <div class="r"><b>Vigil</b> For one beat the cage cracked. We were RIGHT — and we nearly held him.</div>
+    <div class="r"><b>Unbowed</b> Nothing. A frightened boy, a lucky breath. That is all.</div>
+    <div class="r"><b>Drowned</b> The Wrath stirred. I touched the end and chose to die inside its silence.</div>
+    <div class="r"><b>Quiet</b> Something I can't price — and that scares me more than any blade.</div>
+    <div class="dread"><b>Dread</b> — Five felt it. None agree. Silence and certainty cannot both be true — and together they prove nothing.</div>
+    <div class="fl">Miracle, sign, cure, Wrath, luck — read it however your creed demands. The card will never tell you what woke.</div>
+  </div>
+
+  <details>
+    <summary>Four more Omens (The Silence · The Culling · The Kneeling Revolutionary · The Coin of Every Mark)</summary>
+    <div class="det-body">
+      <div class="omen">
+        <div class="title">The Silence</div>
+        <div class="fact">In the boy's presence the killer's roaring mind goes quiet — peace where there has only ever been noise.</div>
+        <div class="r"><b>Order</b> A snare for weak minds; even our enemies are charmed.</div>
+        <div class="r"><b>Vigil</b> The Saint's nearness stills the storm.</div>
+        <div class="r"><b>Unbowed</b> A sick man finds a calm friend. Read no scripture into it.</div>
+        <div class="r"><b>Drowned</b> He soothes his own herald so the herald will carry him home.</div>
+        <div class="r"><b>Quiet</b> Worth more to a man who can't sleep than to a man who can.</div>
+        <div class="dread"><b>Dread</b> — The most broken soul in the realm is the one instrument fine enough to hear God — and calls it a tool.</div>
+      </div>
+      <div class="omen">
+        <div class="title">The Culling</div>
+        <div class="fact">A public mass rite cleanses the burning slum — a thousand branded herded beneath it, called divine wrath made visible.</div>
+        <div class="r"><b>Order</b> Mercy, made plain. The realm is cleansed.</div>
+        <div class="r"><b>Vigil</b> They murder the faithful to bury the Saint among the bodies.</div>
+        <div class="r"><b>Unbowed</b> Not wrath. Slaughter — and they name the knife a god.</div>
+        <div class="r"><b>Drowned</b> At last they do our work. Let it spread.</div>
+        <div class="r"><b>Quiet</b> Bad for everyone's business — except the man who knew which way the crowd would run.</div>
+        <div class="dread"><b>Dread</b> — He branded souls one at a time for thirty years. Today they handed him a thousand and called it mercy.</div>
+      </div>
+      <div class="omen">
+        <div class="title">The Kneeling Revolutionary</div>
+        <div class="fact">The most dangerous man in the realm lays down his sword and, on his knees, begs a frightened slum boy to bring the dead back from the living hell.</div>
+        <div class="r"><b>Order</b> Heresy on its knees, praying for a resurrection only the Triad may grant.</div>
+        <div class="r"><b>Vigil</b> Even the godless kneel to him now.</div>
+        <div class="r"><b>Unbowed</b> Our coldest blade, broken open by grief. This is what their lie does.</div>
+        <div class="r"><b>Drowned</b> He kneels to the end of all things and does not know it.</div>
+        <div class="r"><b>Quiet</b> A man who'll pay anything is a man you never run out of road to sell.</div>
+        <div class="dread"><b>Dread</b> — He came to seize a lever and found a weeping boy who could not lift it.</div>
+      </div>
+      <div class="omen">
+        <div class="title">The Coin of Every Mark</div>
+        <div class="fact">A broker counts the bids and finds the same boy on every ledger — Order, Vigil, Unbowed, and Drowned all reaching for one secret.</div>
+        <div class="r"><b>Order</b> If heretics, cultists, and rebels all want him, he endangers the whole realm.</div>
+        <div class="r"><b>Vigil</b> Even his enemies bid on their own salvation.</div>
+        <div class="r"><b>Unbowed</b> Four powers, one beggar — a wedge to split them all.</div>
+        <div class="r"><b>Drowned</b> All roads bend toward the vessel.</div>
+        <div class="r"><b>Quiet</b> That's not a friend anymore — that's a fortune with a face.</div>
+        <div class="dread"><b>Dread</b> — For the first time, lying for his friend cost him something. His grin slipped.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="spoiler">
+    <summary>⚠ The secret beneath it all — do not open if you want to read it cold</summary>
+    <div class="det-body">
+      <p>The "Saint candidate" the whole realm is hunting is <b>not a Saint</b>. He is the <b>Triad itself</b> — the triune god, all three-in-one — incarnate in a mortal vessel that cannot hold it. So he is amnesiac, believing himself just a branded nobody, carrying a dormant remnant of power he has no idea how to use.</p>
+      <p>He reads as "untouched by the Breath" because <em>the Breath is his own essence</em> — Subjugation cannot touch its source. That is why the iron never took, why misfortune bends around him, why the madman's noise falls silent near him.</p>
+      <p>No character ever confirms it. No card ever names it. The one heartbeat at the climax — felt five private, contradictory, deniable ways — is assembled into the truth by <b>the reader alone</b>. Even Cassian, the Voice who supposedly hears the Triad, is afraid and unsure. The whole Church, top to bottom, is frightened people guessing. And the gentlest soul in the slum is the answer to every prayer in the realm — and he doesn't know it's him.</p>
+    </div>
+  </details>
+
+  <!-- ============ THE WORLD ============ -->
+  <h2 id="world">The World</h2>
+
+  <h3>The doctrine — the air everyone breathes</h3>
+  <p><b>The Triad</b> is a triune god: three beings sharing one mind, said to have made the world in their image. Its true names were lost long ago. The Church names its three faces <b>Soul</b> (the world's animating force), <b>Sin</b> (the one who subjugates the sinner), and <b>Saint</b> (the one who redeems only the most worthy).</p>
+  <p>The cruelty is the machine: <b>sin weakens the soul</b>; a stained soul lets in <b>the Breath</b> — the god's essence hanging in the air — and that is <b>Subjugation</b>, a living hell of misfortune suffered while alive. This is the <em>only</em> sanctioned explanation for suffering, so every misfortune is read as proof you sinned. The realm polices itself with its own grief. The clergy genuinely believe it — which is exactly why it cannot be broken.</p>
+  <p>The Church brands the terminally stained and casts them out to rot in <b>The Ashes</b>, the slum. The only escape from damnation is <b>Sainthood</b> — practically impossible, and only one Saint may live at a time. Whether the Triad is real at all — dead, absent, or shackled — <b>nobody can prove.</b> That question is the heart of everything.</p>
+
+  <h3>The realm</h3>
+  <p><b>The Triarchate</b> — one great realm, the Church <em>is</em> the state. Its capital is <b>Choirhold</b>, a cathedral-city where the hymns never cease and to fall silent from praise is itself a crime. At its heart stands <b>The High Choir</b>, seat of <b>the Voice</b> — Cassian, who alone claims to hear the Triad, and whose own secret is the linchpin of the saga.</p>
+
+  <h3>The five factions — five readings of one reality</h3>
+  <p class="lede">Not elemental colors — answers. All five see the same Breath, the same misfortune, the same unseen Wrath, and reach opposite conclusions. That is the game's whole originality, and the novel's spine.</p>
+  <div class="grid5">
+    <div class="fac"><b>The Order of the Triad</b> — control<div class="creed">"They're real and wrathful — only we hold back the Wrath. Obey, or perish." The ruling theocracy: inquisitors, templars, the Choir, penitent conscripts.</div></div>
+    <div class="fac"><b>The Vigil</b> — devotion<div class="creed">"The Church imprisoned the Triad. Free it." Heretic faithful raising a true Saint to break the cage.</div></div>
+    <div class="fac"><b>The Unbowed</b> — denial<div class="creed">"The gods are dead lies; sin is a leash." A people's revolution to tear it all down by steel.</div></div>
+    <div class="fac"><b>The Drowned</b> — surrender<div class="creed">"Subjugation is the world's true face." A doom cult that would bring the whole world under the Wrath.</div></div>
+    <div class="fac"><b>The Quiet</b> — exploit<div class="creed">"Alive or dead — silence is profit." The underworld; brokers of sin and secrets who sell to all sides.</div></div>
+  </div>
+
+  <!-- ============ THE GAME ============ -->
+  <h2 id="game">The Game</h2>
+  <p class="lede">Digital, mid-weight. You don't fight over a life total — you fight over <em>what reality means.</em></p>
+
+  <h3>The Procession — the core</h3>
+  <p>A shared row of <b>Omen</b> cards sits between both players — ambiguous facts of the world, each printing five faction reading-lines plus a Dread line. You spend <b>Testimony</b> to push a shared <b>Verdict</b> toward your reading. When an Omen resolves, only the leading faction's line happens, and that faction banks <b>Conviction</b> — the win currency. Whoever wins the Verdict makes their reading <em>true for the table.</em></p>
+
+  <h3>Three resources — no mana</h3>
+  <p><b>Faith</b> — an automatic, escalating tithe (2, then +1/turn), so there's no mana screw and every game is decisions, not draws. <b>Sin</b> — the receipt you <em>survive</em>: powerful cards stain your own souls; the stained hit harder but bleed toward the public <b>Subjugated Row</b>. <b>Testimony</b> — minted by acting in-doctrine, so your economy <em>is</em> your belief enacted. A shared <b>Breath Clock</b> ticks the world toward the Drowned's apocalypse.</p>
+
+  <h3>Five asymmetric ways to win</h3>
+  <p>Order wins by <b>Judgment</b>, the Vigil by <b>raising the Saint</b>, the Unbowed by <b>abolition</b> (smash the relics, drag the Breath to zero), the Drowned by <b>universal Subjugation</b>, the Quiet by <b>winning unseen</b>. Each faction is a deck; each plays its creed. And at the center of it all sits <b>the Candidate</b> — the evolving figure every faction is built to capture, protect, exploit, or destroy.</p>
+
+  <p class="note">TRIARCHATE · codex compiled 2026-06-14 · world, mechanics &amp; Book 1 "Roads to Riches" · a living document</p>
+
+</div>
+</body>
+</html>
